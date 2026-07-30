@@ -3,13 +3,13 @@
 	"id": "bounty",
 	"version": "${version}",
 	"name": "Bountiful Bounty",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Adds Stackable Flowers",
 	"authors": [
-		"Me!"
+		"Bee",
+		"Phantom Pickle"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/Tricangel/Bountiful-Bounty"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/bounty/icon.png",
