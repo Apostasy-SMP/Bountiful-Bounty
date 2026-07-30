@@ -24,7 +24,7 @@ public abstract class BlocksMixin {
 		return switch (id) {
 			case "red_tulip", "pink_tulip", "white_tulip", "orange_tulip" -> properties -> new BountifulFlowerBlock(MobEffects.WEAKNESS, 7.0F, properties);
             case "dandelion", "blue_orchid" -> properties -> new BountifulFlowerBlock(MobEffects.SATURATION, 0.35F, properties);
-			case "poppy" -> properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties);
+			case "poppy", "torchflower" -> properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties);
 			case "allium" -> properties -> new BountifulFlowerBlock(MobEffects.FIRE_RESISTANCE, 3.0F, properties);
 			case "azure_bluet" -> properties -> new BountifulFlowerBlock(MobEffects.BLINDNESS, 11.0F, properties);
 			case "oxeye_daisy" -> properties -> new BountifulFlowerBlock(MobEffects.REGENERATION, 7.0F, properties);

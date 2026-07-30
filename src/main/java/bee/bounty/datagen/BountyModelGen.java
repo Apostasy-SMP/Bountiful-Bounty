@@ -37,6 +37,7 @@ public class BountyModelGen extends FabricModelProvider {
         createFlowerBlock(Blocks.OPEN_EYEBLOSSOM, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
         createFlowerBlock(Blocks.CLOSED_EYEBLOSSOM, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
         createFlowerBlock(Blocks.WITHER_ROSE, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(Blocks.TORCHFLOWER, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
     }
 
     @Override

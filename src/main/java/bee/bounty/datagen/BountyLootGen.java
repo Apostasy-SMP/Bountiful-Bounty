@@ -26,26 +26,31 @@ public class BountyLootGen extends FabricBlockLootTableProvider {
     public void generate() {
 
 
-        add(Blocks.ALLIUM, createFlowerDrop(Blocks.ALLIUM));
-        add(Blocks.ORANGE_TULIP, createFlowerDrop(Blocks.ORANGE_TULIP));
-        add(Blocks.PINK_TULIP, createFlowerDrop(Blocks.PINK_TULIP));
-        add(Blocks.RED_TULIP, createFlowerDrop(Blocks.RED_TULIP));
-        add(Blocks.WHITE_TULIP, createFlowerDrop(Blocks.WHITE_TULIP));
-        add(Blocks.DANDELION, createFlowerDrop(Blocks.DANDELION));
-        add(Blocks.POPPY, createFlowerDrop(Blocks.POPPY));
-        add(Blocks.BLUE_ORCHID, createFlowerDrop(Blocks.BLUE_ORCHID));
-        add(Blocks.AZURE_BLUET, createFlowerDrop(Blocks.AZURE_BLUET));
-        add(Blocks.OXEYE_DAISY, createFlowerDrop(Blocks.OXEYE_DAISY));
-        add(Blocks.CORNFLOWER, createFlowerDrop(Blocks.CORNFLOWER));
-        add(Blocks.LILY_OF_THE_VALLEY, createFlowerDrop(Blocks.LILY_OF_THE_VALLEY));
-        add(Blocks.OPEN_EYEBLOSSOM, createFlowerDrop(Blocks.OPEN_EYEBLOSSOM));
-        add(Blocks.CLOSED_EYEBLOSSOM, createFlowerDrop(Blocks.CLOSED_EYEBLOSSOM));
-        add(Blocks.WITHER_ROSE, createFlowerDrop(Blocks.WITHER_ROSE));
+        createFlowerDrop(Blocks.ALLIUM);
+        createFlowerDrop(Blocks.ORANGE_TULIP);
+        createFlowerDrop(Blocks.PINK_TULIP);
+        createFlowerDrop(Blocks.RED_TULIP);
+        createFlowerDrop(Blocks.WHITE_TULIP);
+        createFlowerDrop(Blocks.DANDELION);
+        createFlowerDrop(Blocks.POPPY);
+        createFlowerDrop(Blocks.BLUE_ORCHID);
+        createFlowerDrop(Blocks.AZURE_BLUET);
+        createFlowerDrop(Blocks.OXEYE_DAISY);
+        createFlowerDrop(Blocks.CORNFLOWER);
+        createFlowerDrop(Blocks.LILY_OF_THE_VALLEY);
+        createFlowerDrop(Blocks.OPEN_EYEBLOSSOM);
+        createFlowerDrop(Blocks.CLOSED_EYEBLOSSOM);
+        createFlowerDrop(Blocks.WITHER_ROSE);
+        createFlowerDrop(Blocks.TORCHFLOWER);
 
     }
 
+    public void createFlowerDrop(Block block) {
+        add(block, createFlowerDropBuilder(block));
+    }
 
-    public LootTable.Builder createFlowerDrop(Block block) {
+
+    public LootTable.Builder createFlowerDropBuilder(Block block) {
         return LootTable.lootTable()
                 .withPool(this.applyExplosionCondition(block, LootPool.lootPool()
                         .setRolls(new ConstantValue(1))
