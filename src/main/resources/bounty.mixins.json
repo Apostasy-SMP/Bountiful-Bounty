@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "bee.bounty.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+      "BlocksMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "size=1": {
+      "model": "minecraft:block/red_tulip_1"
+    },
+    "size=2": {
+      "model": "minecraft:block/red_tulip_2"
+    },
+    "size=3": {
+      "model": "minecraft:block/red_tulip_3"
+    },
+    "size=4": {
+      "model": "minecraft:block/red_tulip_4"
+    }
+  }
+}
