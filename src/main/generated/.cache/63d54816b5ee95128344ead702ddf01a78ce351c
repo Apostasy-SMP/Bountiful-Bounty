@@ -1,0 +1,16 @@
+// 1.21.11	-999999999-01-01T00:00:00	Bountiful Bounty/Block Loot Tables
+5ad38326a95578eabe0a73c4698e78e11e665a3f data/minecraft/loot_table/blocks/allium.json
+d6a18c93cda6c1fe0bebbb5946bf8e97689d198d data/minecraft/loot_table/blocks/azure_bluet.json
+57a36cedaf818b70d9e5c5b3d839855df1244eb3 data/minecraft/loot_table/blocks/blue_orchid.json
+6c5a0301dd9faa501eb364b15e1ccdca61542dda data/minecraft/loot_table/blocks/closed_eyeblossom.json
+1508a31d520305315ac7d18dd4db0df9d72ac687 data/minecraft/loot_table/blocks/cornflower.json
+ed66525fd126f971783bb56bda3798102edec6a8 data/minecraft/loot_table/blocks/dandelion.json
+2794d5b76dfd86b62ab0864487283ddf7ab5c6bd data/minecraft/loot_table/blocks/lily_of_the_valley.json
+7e541d1ee30b8fdd05702f491659a88dacfd5771 data/minecraft/loot_table/blocks/open_eyeblossom.json
+6034f9882cb0b90f880f3470b8417fa0466822a3 data/minecraft/loot_table/blocks/orange_tulip.json
+9391c8b29e337ca427c2c968205aba5ac9fc0a2e data/minecraft/loot_table/blocks/oxeye_daisy.json
+d2b532372b70dd06499896c2434742c71a7b0307 data/minecraft/loot_table/blocks/pink_tulip.json
+7f8743ac93fee565d787c4296a523a137ec54446 data/minecraft/loot_table/blocks/poppy.json
+4a4042bb795f579b1d899f139ab7c17784210c66 data/minecraft/loot_table/blocks/red_tulip.json
+597847eff1eb0271ad8284802d2c88acd28ef858 data/minecraft/loot_table/blocks/white_tulip.json
+49fc80683ab18cee39ddf9d07b487057fc6e8435 data/minecraft/loot_table/blocks/wither_rose.json
