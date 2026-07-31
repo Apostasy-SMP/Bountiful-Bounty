@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "bounty:block/tall_cyan_rose_bottom"
+    },
+    "half=upper": {
+      "model": "bounty:block/tall_cyan_rose_top"
+    }
+  }
+}

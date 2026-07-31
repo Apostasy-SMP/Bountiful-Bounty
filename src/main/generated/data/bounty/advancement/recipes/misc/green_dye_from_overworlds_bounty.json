@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_green_dye": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#minecraft:flowers"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bounty:green_dye_from_overworlds_bounty"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_green_dye"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bounty:green_dye_from_overworlds_bounty"
+    ]
+  }
+}

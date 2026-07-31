@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "bounty:block/black_sunflower_bottom"
+    },
+    "half=upper": {
+      "model": "bounty:block/black_sunflower_top"
+    }
+  }
+}

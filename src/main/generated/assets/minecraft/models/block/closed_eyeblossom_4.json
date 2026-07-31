@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "bounty:block/closed_eyeblossom_4"
-  }
-}

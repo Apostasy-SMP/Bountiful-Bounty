@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "bounty:block/tall_wither_rose_top"
+  }
+}

@@ -6,9 +6,15 @@ import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.Containers;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.InsideBlockEffectApplier;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BoneMealItem;
 import net.minecraft.world.item.ItemStack;
@@ -69,4 +75,18 @@ public class BountifulWitherRoseBlock extends WitherRoseBlock implements Bonemea
         BoneMealItem.addGrowthParticles(serverLevel, blockPos, 30);
     }
 
+    protected void entityInside(BlockState blockState, Level level, BlockPos blockPos, Entity entity, InsideBlockEffectApplier insideBlockEffectApplier, boolean bl) {
+        if (level instanceof ServerLevel serverLevel) {
+            if (level.getDifficulty() != Difficulty.PEACEFUL && entity instanceof LivingEntity livingEntity) {
+                if (!livingEntity.isInvulnerableTo(serverLevel, level.damageSources().wither())) {
+                    livingEntity.addEffect(this.getBeeInteractionEffect(blockState));
+                }
+            }
+        }
+
+    }
+
+    public MobEffectInstance getBeeInteractionEffect(BlockState state) {
+        return new MobEffectInstance(MobEffects.WITHER, (int) (40 * (state.getValue(SIZE) * 0.5)) + 10);
+    }
 }

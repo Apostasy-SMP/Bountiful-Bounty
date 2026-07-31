@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "bounty:block/black_sunflower_bottom"
+  }
+}

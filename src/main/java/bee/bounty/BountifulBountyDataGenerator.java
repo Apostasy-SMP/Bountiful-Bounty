@@ -1,9 +1,12 @@
 package bee.bounty;
 
-import bee.bounty.datagen.BountyLootGen;
-import bee.bounty.datagen.BountyModelGen;
+import bee.bounty.datagen.*;
+import bee.bounty.worldgen.BountyConfiguredFeatures;
+import bee.bounty.worldgen.BountyPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 
 public class BountifulBountyDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -12,6 +15,15 @@ public class BountifulBountyDataGenerator implements DataGeneratorEntrypoint {
 
 		pack.addProvider(BountyModelGen::new);
 		pack.addProvider(BountyLootGen::new);
+		pack.addProvider(BountyLangGen::new);
+		pack.addProvider(BountyWorldGen::new);
+		pack.addProvider(BountyRecipeGen::new);
 
+	}
+
+	@Override
+	public void buildRegistry(RegistrySetBuilder registryBuilder) {
+		registryBuilder.add(Registries.CONFIGURED_FEATURE, BountyConfiguredFeatures::configure);
+		registryBuilder.add(Registries.PLACED_FEATURE, BountyPlacedFeatures::configure);
 	}
 }

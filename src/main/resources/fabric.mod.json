@@ -20,7 +20,10 @@
 		],
 		"fabric-datagen": [
 			"bee.bounty.BountifulBountyDataGenerator"
-		]
+		],
+		"client": [
+		"bee.bounty.BountifulBountyClient"
+	]
 	},
 	"mixins": [
 		"bounty.mixins.json"
