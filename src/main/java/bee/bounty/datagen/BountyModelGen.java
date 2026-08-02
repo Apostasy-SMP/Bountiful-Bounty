@@ -18,6 +18,7 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
+import static net.minecraft.client.data.models.BlockModelGenerators.createSimpleBlock;
 import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
 
 
@@ -42,19 +43,20 @@ public class BountyModelGen extends FabricModelProvider {
         createVanillaFlowerBlock(Blocks.LILY_OF_THE_VALLEY, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
         createVanillaFlowerBlock(Blocks.WITHER_ROSE, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
 
-        createFlowerBlock(BountyBlocks.RED_ROSE, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
-        createFlowerBlock(BountyBlocks.CYAN_ROSE, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
-        createFlowerBlock(BountyBlocks.PINK_ROSE, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.RED_ROSE, BountyBlocks.POTTED_RED_ROSE, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.CYAN_ROSE, BountyBlocks.POTTED_CYAN_ROSE,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.PINK_ROSE, BountyBlocks.POTTED_PINK_ROSE,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
 
-        createFlowerBlock(BountyBlocks.BLUE_ANEMONE, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
-        createFlowerBlock(BountyBlocks.CRIMSON_LILY, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
-        createFlowerBlock(BountyBlocks.DUSK_POTENTILLA, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
-        createFlowerBlock(BountyBlocks.DUSK_TULIP, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
-        createFlowerBlock(BountyBlocks.EMERALD_ZINNIA, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
-        createFlowerBlock(BountyBlocks.OVERWORLDS_BOUNTY, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
-        createFlowerBlock(BountyBlocks.PERENNIAL, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
-        createFlowerBlock(BountyBlocks.PINWHEEL_DAISY, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
-        createFlowerBlock(BountyBlocks.RELIC_FLOWER, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.BLUE_ANEMONE, BountyBlocks.POTTED_BLUE_ANEMONE,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.CRIMSON_LILY, BountyBlocks.POTTED_CRIMSON_LILY,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.DUSK_POTENTILLA, BountyBlocks.POTTED_DUSK_POTENTILLA,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.DUSK_TULIP, BountyBlocks.POTTED_DUSK_TULIP,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.EMERALD_ZINNIA, BountyBlocks.POTTED_EMERALD_ZINNIA,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.OVERWORLDS_BOUNTY, BountyBlocks.POTTED_OVERWORLDS_BOUNTY,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.PERENNIAL, BountyBlocks.POTTED_PERENNIAL,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.PINWHEEL_DAISY, BountyBlocks.POTTED_PINWHEEL_DAISY,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.RELIC_FLOWER, BountyBlocks.POTTED_RELIC_FLOWER,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+
 
         blockModelGenerators.createDoublePlantWithDefaultItem(BountyBlocks.TALL_PINK_ROSE, BlockModelGenerators.PlantType.NOT_TINTED);
         blockModelGenerators.createDoublePlantWithDefaultItem(BountyBlocks.TALL_CYAN_ROSE, BlockModelGenerators.PlantType.NOT_TINTED);
@@ -96,13 +98,13 @@ public class BountyModelGen extends FabricModelProvider {
 
     }
 
-    public void createFlowerBlock(Block block, BlockModelGenerators generators, BlockModelGenerators.PlantType  type) {
+    public void createFlowerBlock(Block block, Block potted, BlockModelGenerators generators, BlockModelGenerators.PlantType  type) {
 
         MultiVariant variant1 = plainVariant(type.getCross().createWithSuffix(block, "_1", getFlowerTextureMapping(block, "_1"), generators.modelOutput));
         MultiVariant variant2 = plainVariant(type.getCross().createWithSuffix(block, "_2", getFlowerTextureMapping(block, "_2"), generators.modelOutput));
         MultiVariant variant3 = plainVariant(type.getCross().createWithSuffix(block, "_3", getFlowerTextureMapping(block, "_3"), generators.modelOutput));
         MultiVariant variant4 = plainVariant(type.getCross().createWithSuffix(block, "_4", getFlowerTextureMapping(block, "_4"), generators.modelOutput));
-
+        MultiVariant pottedModel = plainVariant(type.getCrossPot().create(potted, getFlowerPotTextureMapping(block, "_1"), generators.modelOutput));
         generators.blockStateOutput.accept(
                 MultiVariantGenerator.dispatch(block).with(PropertyDispatch.initial(BountyBlockProperties.SIZE)
                         .select(1, variant1)
@@ -110,6 +112,8 @@ public class BountyModelGen extends FabricModelProvider {
                         .select(3, variant3)
                         .select(4, variant4))
         );
+
+        generators.blockStateOutput.accept(createSimpleBlock(potted, pottedModel));
 
 
         generators.registerSimpleItemModel(block.asItem(), ModelTemplates.FLAT_ITEM.create(block, getFlowerItemTextureMapping(block), generators.modelOutput));
@@ -119,6 +123,11 @@ public class BountyModelGen extends FabricModelProvider {
     public TextureMapping getFlowerTextureMapping(Block block, String suffix) {
         Identifier identifier = BountifulBounty.id(BuiltInRegistries.BLOCK.getKey(block).getPath()).withPrefix("block/").withSuffix(suffix);
         return TextureMapping.cross(identifier);
+    }
+
+    public TextureMapping getFlowerPotTextureMapping(Block block, String suffix) {
+        Identifier identifier = BountifulBounty.id(BuiltInRegistries.BLOCK.getKey(block).getPath()).withPrefix("block/").withSuffix(suffix);
+        return TextureMapping.plant(identifier);
     }
 
     public TextureMapping getFlowerItemTextureMapping(Block block) {

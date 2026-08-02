@@ -27,6 +27,19 @@ public class BountifulBountyClient implements ClientModInitializer {
 		BlockRenderLayerMap.putBlock(BountyBlocks.RELIC_FLOWER, ChunkSectionLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(BountyBlocks.PINWHEEL_DAISY, ChunkSectionLayer.CUTOUT);
 
+		BlockRenderLayerMap.putBlock(BountyBlocks.POTTED_CYAN_ROSE, ChunkSectionLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(BountyBlocks.POTTED_PINK_ROSE, ChunkSectionLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(BountyBlocks.POTTED_RED_ROSE, ChunkSectionLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(BountyBlocks.POTTED_DUSK_POTENTILLA, ChunkSectionLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(BountyBlocks.POTTED_OVERWORLDS_BOUNTY, ChunkSectionLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(BountyBlocks.POTTED_BLUE_ANEMONE, ChunkSectionLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(BountyBlocks.POTTED_CRIMSON_LILY, ChunkSectionLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(BountyBlocks.POTTED_DUSK_TULIP, ChunkSectionLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(BountyBlocks.POTTED_EMERALD_ZINNIA, ChunkSectionLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(BountyBlocks.POTTED_PERENNIAL, ChunkSectionLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(BountyBlocks.POTTED_RELIC_FLOWER, ChunkSectionLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(BountyBlocks.POTTED_PINWHEEL_DAISY, ChunkSectionLayer.CUTOUT);
+
 
 
 	}

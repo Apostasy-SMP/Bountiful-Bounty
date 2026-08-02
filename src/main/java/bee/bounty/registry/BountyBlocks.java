@@ -36,18 +36,18 @@ public class BountyBlocks {
     public static final Block PINWHEEL_DAISY = register("pinwheel_daisy", properties -> new NetherFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
     public static final Block RELIC_FLOWER = register("relic_flower", properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
 
-    public static final Block POTTED_RED_ROSE = register("potted_red_rose", properties -> new FlowerPotBlock(RED_ROSE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
-    public static final Block POTTED_CYAN_ROSE = register("potted_cyan_rose", properties -> new FlowerPotBlock(CYAN_ROSE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY).mapColor(MapColor.COLOR_CYAN), true);
-    public static final Block POTTED_PINK_ROSE = register("potted_pink_rose", properties -> new FlowerPotBlock(PINK_ROSE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY).mapColor(MapColor.COLOR_PINK), true);
-    public static final Block POTTED_BLUE_ANEMONE = register("potted_blue_anemone", properties -> new FlowerPotBlock(BLUE_ANEMONE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
-    public static final Block POTTED_CRIMSON_LILY = register("potted_crimson_lily", properties -> new FlowerPotBlock(CRIMSON_LILY, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
-    public static final Block POTTED_DUSK_POTENTILLA = register("potted_dusk_potentilla", properties -> new FlowerPotBlock(DUSK_POTENTILLA, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
-    public static final Block POTTED_DUSK_TULIP = register("potted_dusk_tulip", properties -> new FlowerPotBlock(DUSK_TULIP, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
-    public static final Block POTTED_EMERALD_ZINNIA = register("potted_emerald_zinnia", properties -> new FlowerPotBlock(EMERALD_ZINNIA, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
-    public static final Block POTTED_OVERWORLDS_BOUNTY = register("potted_overworlds_bounty", properties -> new FlowerPotBlock(OVERWORLDS_BOUNTY, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
-    public static final Block POTTED_PERENNIAL = register("potted_perennial", properties -> new FlowerPotBlock(PERENNIAL, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
-    public static final Block POTTED_PINWHEEL_DAISY = register("potted_pinwheel_daisy", properties -> new FlowerPotBlock(PINWHEEL_DAISY, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
-    public static final Block POTTED_RELIC_FLOWER = register("potted_relic_flower", properties -> new FlowerPotBlock(RELIC_FLOWER, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
+    public static final Block POTTED_RED_ROSE = register("potted_red_rose", properties -> new FlowerPotBlock(RED_ROSE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_CYAN_ROSE = register("potted_cyan_rose", properties -> new FlowerPotBlock(CYAN_ROSE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM).mapColor(MapColor.COLOR_CYAN), false);
+    public static final Block POTTED_PINK_ROSE = register("potted_pink_rose", properties -> new FlowerPotBlock(PINK_ROSE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM).mapColor(MapColor.COLOR_PINK), false);
+    public static final Block POTTED_BLUE_ANEMONE = register("potted_blue_anemone", properties -> new FlowerPotBlock(BLUE_ANEMONE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_CRIMSON_LILY = register("potted_crimson_lily", properties -> new FlowerPotBlock(CRIMSON_LILY, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_DUSK_POTENTILLA = register("potted_dusk_potentilla", properties -> new FlowerPotBlock(DUSK_POTENTILLA, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_DUSK_TULIP = register("potted_dusk_tulip", properties -> new FlowerPotBlock(DUSK_TULIP, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_EMERALD_ZINNIA = register("potted_emerald_zinnia", properties -> new FlowerPotBlock(EMERALD_ZINNIA, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_OVERWORLDS_BOUNTY = register("potted_overworlds_bounty", properties -> new FlowerPotBlock(OVERWORLDS_BOUNTY, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_PERENNIAL = register("potted_perennial", properties -> new FlowerPotBlock(PERENNIAL, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_PINWHEEL_DAISY = register("potted_pinwheel_daisy", properties -> new FlowerPotBlock(PINWHEEL_DAISY, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_RELIC_FLOWER = register("potted_relic_flower", properties -> new FlowerPotBlock(RELIC_FLOWER, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
 
 
     public static final Block TALL_WITHER_ROSE = register("tall_wither_rose", TallWitherRose::new, BlockBehaviour.Properties.ofFullCopy(Blocks.ROSE_BUSH).mapColor(MapColor.COLOR_BLACK), true);
