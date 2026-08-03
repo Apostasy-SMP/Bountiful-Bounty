@@ -36,22 +36,27 @@ public class BountyConfiguredFeatures {
 
 
 
-        FeatureUtils.register(context, RED_ROSES, Feature.FLOWER, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
+        FeatureUtils.register(context, RED_ROSES, Feature.FLOWER, grassPatch(new WeightedBountyFlowerStateProvider(WeightedList.<BlockState>builder()
                 .add(BountyBlocks.RED_ROSE.defaultBlockState()).build()), 64));
 
-        FeatureUtils.register(context, CYAN_ROSES, Feature.FLOWER, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder().
+        FeatureUtils.register(context, CYAN_ROSES, Feature.FLOWER, grassPatch(new WeightedBountyFlowerStateProvider(WeightedList.<BlockState>builder().
                 add(BountyBlocks.CYAN_ROSE.defaultBlockState()).add(BountyBlocks.TALL_CYAN_ROSE.defaultBlockState()).build()), 64));
 
-        FeatureUtils.register(context, PINK_ROSES, Feature.FLOWER, grassPatch(new WeightedStateProvider(WeightedList.<BlockState>builder()
+        FeatureUtils.register(context, PINK_ROSES, Feature.FLOWER, grassPatch(new WeightedBountyFlowerStateProvider(WeightedList.<BlockState>builder()
                 .add(BountyBlocks.PINK_ROSE.defaultBlockState()).add(BountyBlocks.TALL_PINK_ROSE.defaultBlockState()).build()), 64));
 
-        FeatureUtils.register(context, EMERALD_ZINNIA, Feature.FLOWER, grassPatch(SimpleStateProvider.simple(BountyBlocks.EMERALD_ZINNIA), 64));
-        FeatureUtils.register(context, CRIMSON_LILY, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(BountyBlocks.CRIMSON_LILY))));
-        FeatureUtils.register(context, PERENNIAL, Feature.FLOWER, grassPatch(SimpleStateProvider.simple(BountyBlocks.PERENNIAL), 64));
-        FeatureUtils.register(context, PINWHEEL_DAISY, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(BountyBlocks.PINWHEEL_DAISY))));
-        FeatureUtils.register(context, OVERWORLD_BOUNTY, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(BountyBlocks.OVERWORLDS_BOUNTY))));
-        FeatureUtils.register(context, BLUE_ANEMONE, Feature.FLOWER, grassPatch(SimpleStateProvider.simple(BountyBlocks.BLUE_ANEMONE), 64));
-        FeatureUtils.register(context, DUSK_POTENTILLA, Feature.FLOWER, grassPatch(SimpleStateProvider.simple(BountyBlocks.DUSK_POTENTILLA), 64));
+
+        FeatureUtils.register(context, PERENNIAL, Feature.FLOWER, grassPatch(new WeightedBountyFlowerStateProvider(WeightedList.<BlockState>builder().
+                add(BountyBlocks.PERENNIAL.defaultBlockState()).add(BountyBlocks.DUSK_PERENNIAL.defaultBlockState()).build()), 64));
+
+        FeatureUtils.register(context, EMERALD_ZINNIA, Feature.FLOWER, grassPatch(new WeightedBountyFlowerStateProvider(WeightedList.<BlockState>builder().
+                add(BountyBlocks.EMERALD_ZINNIA.defaultBlockState()).add(BountyBlocks.DUSK_ZINNIA.defaultBlockState()).build()), 64));
+
+        FeatureUtils.register(context, CRIMSON_LILY, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new BountyFlowerStateProvider(BountyBlocks.CRIMSON_LILY))));
+        FeatureUtils.register(context, PINWHEEL_DAISY, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new BountyFlowerStateProvider(BountyBlocks.PINWHEEL_DAISY))));
+        FeatureUtils.register(context, OVERWORLD_BOUNTY, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new BountyFlowerStateProvider(BountyBlocks.OVERWORLDS_BOUNTY))));
+        FeatureUtils.register(context, BLUE_ANEMONE, Feature.FLOWER, grassPatch(new BountyFlowerStateProvider(BountyBlocks.BLUE_ANEMONE), 64));
+        FeatureUtils.register(context, DUSK_POTENTILLA, Feature.FLOWER, grassPatch(new BountyFlowerStateProvider(BountyBlocks.DUSK_POTENTILLA), 64));
 
     }
 

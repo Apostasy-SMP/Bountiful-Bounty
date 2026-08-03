@@ -57,6 +57,17 @@ public class BountyModelGen extends FabricModelProvider {
         createFlowerBlock(BountyBlocks.PINWHEEL_DAISY, BountyBlocks.POTTED_PINWHEEL_DAISY,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
         createFlowerBlock(BountyBlocks.RELIC_FLOWER, BountyBlocks.POTTED_RELIC_FLOWER,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
 
+        createFlowerBlock(BountyBlocks.DUSK_ZINNIA, BountyBlocks.POTTED_DUSK_ZINNIA,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.DUSK_PERENNIAL, BountyBlocks.POTTED_DUSK_PERENNIAL,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.DUSK_ALLIUM, BountyBlocks.POTTED_DUSK_ALLIUM,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.DUSK_ORCHID, BountyBlocks.POTTED_DUSK_ORCHID,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.DUSK_POPPY, BountyBlocks.POTTED_DUSK_POPPY,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.DUSK_CORNFLOWER, BountyBlocks.POTTED_DUSK_CORNFLOWER,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.DUSK_LILY, BountyBlocks.POTTED_DUSK_LILY,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.DUSK_DANDELION, BountyBlocks.POTTED_DUSK_DANDELION,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.DUSK_BLUET, BountyBlocks.POTTED_DUSK_BLUET,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.DUSK_DAISY, BountyBlocks.POTTED_DUSK_DAISY,blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+
 
         blockModelGenerators.createDoublePlantWithDefaultItem(BountyBlocks.TALL_PINK_ROSE, BlockModelGenerators.PlantType.NOT_TINTED);
         blockModelGenerators.createDoublePlantWithDefaultItem(BountyBlocks.TALL_CYAN_ROSE, BlockModelGenerators.PlantType.NOT_TINTED);

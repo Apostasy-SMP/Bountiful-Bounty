@@ -4,6 +4,7 @@ import bee.bounty.registry.BountyBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 
 import java.util.concurrent.CompletableFuture;
@@ -28,6 +29,18 @@ public class BountyLangGen extends FabricLanguageProvider {
         translationBuilder.add(BountyBlocks.PERENNIAL, "Perennial");
         translationBuilder.add(BountyBlocks.PINWHEEL_DAISY, "Pinwheel Daisy");
         translationBuilder.add(BountyBlocks.RELIC_FLOWER, "Relic Flower");
+
+        translationBuilder.add(BountyBlocks.DUSK_PERENNIAL, "Dusk Perennial");
+        translationBuilder.add(BountyBlocks.DUSK_ZINNIA, "Dusk Zinnia");
+
+        translationBuilder.add(BountyBlocks.DUSK_ORCHID, "Dusk Orchid");
+        translationBuilder.add(BountyBlocks.DUSK_POPPY, "Dusk Poppy");
+        translationBuilder.add(BountyBlocks.DUSK_ALLIUM, "Dusk Allium");
+        translationBuilder.add(BountyBlocks.DUSK_CORNFLOWER, "Dusk Cornflower");
+        translationBuilder.add(BountyBlocks.DUSK_BLUET, "Dusk Bluet");
+        translationBuilder.add(BountyBlocks.DUSK_DAISY, "Dusk Daisy");
+        translationBuilder.add(BountyBlocks.DUSK_LILY, "Dusk Lily");
+        translationBuilder.add(BountyBlocks.DUSK_DANDELION, "Dusk Dandelion");
 
 
         translationBuilder.add(BountyBlocks.BLACK_SUNFLOWER, "Black Sunflower");

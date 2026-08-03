@@ -43,6 +43,18 @@ public class BountyRecipeGen extends FabricRecipeProvider {
                 addFlowerDye(BountyBlocks.BLUE_ANEMONE, Items.BLUE_DYE);
                 addFlowerDye(BountyBlocks.DUSK_POTENTILLA, Items.MAGENTA_DYE);
 
+                addFlowerDye(BountyBlocks.DUSK_ZINNIA, Items.BROWN_DYE);
+                addFlowerDye(BountyBlocks.DUSK_PERENNIAL, Items.ORANGE_DYE);
+                addFlowerDye(BountyBlocks.DUSK_ORCHID, Items.ORANGE_DYE);
+                addFlowerDye(BountyBlocks.DUSK_POPPY, Items.RED_DYE);
+                addFlowerDye(BountyBlocks.DUSK_ALLIUM, Items.PINK_DYE);
+                addFlowerDye(BountyBlocks.DUSK_CORNFLOWER, Items.RED_DYE);
+                addFlowerDye(BountyBlocks.DUSK_BLUET, Items.MAGENTA_DYE);
+                addFlowerDye(BountyBlocks.DUSK_DAISY, Items.PURPLE_DYE);
+                addFlowerDye(BountyBlocks.DUSK_LILY, Items.GRAY_DYE);
+                addFlowerDye(BountyBlocks.DUSK_DANDELION, Items.BLUE_DYE);
+
+
             }
 
             public void addFlowerDye(Block block, Item item) {

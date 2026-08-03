@@ -36,6 +36,29 @@ public class BountyBlocks {
     public static final Block PINWHEEL_DAISY = register("pinwheel_daisy", properties -> new NetherFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
     public static final Block RELIC_FLOWER = register("relic_flower", properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
 
+    public static final Block DUSK_PERENNIAL = register("dusk_perennial", properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
+    public static final Block DUSK_ZINNIA = register("dusk_zinnia", properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
+    public static final Block DUSK_ORCHID = register("dusk_orchid", properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
+    public static final Block DUSK_POPPY = register("dusk_poppy", properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
+    public static final Block DUSK_ALLIUM = register("dusk_allium", properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
+    public static final Block DUSK_CORNFLOWER = register("dusk_cornflower", properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
+    public static final Block DUSK_BLUET = register("dusk_bluet", properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
+    public static final Block DUSK_DAISY = register("dusk_daisy", properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
+    public static final Block DUSK_LILY = register("dusk_lily", properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
+    public static final Block DUSK_DANDELION = register("dusk_dandelion", properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POPPY), true);
+
+    public static final Block POTTED_DUSK_ALLIUM = register("potted_dusk_allium", properties -> new FlowerPotBlock(DUSK_ALLIUM, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_DUSK_CORNFLOWER = register("potted_dusk_cornflower", properties -> new FlowerPotBlock(DUSK_CORNFLOWER, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_DUSK_LILY = register("potted_dusk_lily", properties -> new FlowerPotBlock(DUSK_LILY, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_DUSK_DANDELION = register("potted_dusk_dandelion", properties -> new FlowerPotBlock(DUSK_DANDELION, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_DUSK_BLUET= register("potted_dusk_bluet", properties -> new FlowerPotBlock(DUSK_BLUET, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_DUSK_DAISY = register("potted_dusk_daisy", properties -> new FlowerPotBlock(DUSK_DAISY, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_DUSK_ORCHID= register("potted_dusk_orchid", properties -> new FlowerPotBlock(DUSK_ORCHID, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_DUSK_POPPY = register("potted_dusk_poppy", properties -> new FlowerPotBlock(DUSK_POPPY, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_DUSK_ZINNIA= register("potted_dusk_zinnia", properties -> new FlowerPotBlock(DUSK_ZINNIA, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+    public static final Block POTTED_DUSK_PERENNIAL = register("potted_dusk_perennial", properties -> new FlowerPotBlock(DUSK_PERENNIAL, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
+
+
     public static final Block POTTED_RED_ROSE = register("potted_red_rose", properties -> new FlowerPotBlock(RED_ROSE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM), false);
     public static final Block POTTED_CYAN_ROSE = register("potted_cyan_rose", properties -> new FlowerPotBlock(CYAN_ROSE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM).mapColor(MapColor.COLOR_CYAN), false);
     public static final Block POTTED_PINK_ROSE = register("potted_pink_rose", properties -> new FlowerPotBlock(PINK_ROSE, properties), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM).mapColor(MapColor.COLOR_PINK), false);

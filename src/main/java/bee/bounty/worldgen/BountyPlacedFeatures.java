@@ -44,17 +44,17 @@ public class BountyPlacedFeatures {
 
 
 
-        PlacementUtils.register(context, RED_ROSES, configuredRedRoses, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-        PlacementUtils.register(context, CYAN_ROSES, configuredCyanRoses, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-        PlacementUtils.register(context, PINK_ROSES, configuredPinkRoses, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        PlacementUtils.register(context, RED_ROSES, configuredRedRoses, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        PlacementUtils.register(context, CYAN_ROSES, configuredCyanRoses, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        PlacementUtils.register(context, PINK_ROSES, configuredPinkRoses, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
-        PlacementUtils.register(context, EMERALD_ZINNIA, configuredEmeraldZinnia, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-        PlacementUtils.register(context, CRIMSON_LILY, configuredCrimsonLily, PlacementUtils.FULL_RANGE, BiomeFilter.biome());
-        PlacementUtils.register(context, PINWHEEL_DAISY, configuredPinwheel, PlacementUtils.FULL_RANGE, BiomeFilter.biome());
-        PlacementUtils.register(context, PERENNIAL, configuredPerennial, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-        PlacementUtils.register(context, OVERWORLD_BOUNTY, configuredOverworldBounty, PlacementUtils.FULL_RANGE, BiomeFilter.biome(), BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.DOWN.getUnitVec3i(), Blocks.SOUL_SOIL)));
-        PlacementUtils.register(context, BLUE_ANEMONE, configuredBlueAnemone, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-        PlacementUtils.register(context, DUSK_POTENTILLA, configuredDuskPotentilla, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        PlacementUtils.register(context, EMERALD_ZINNIA, configuredEmeraldZinnia, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        PlacementUtils.register(context, CRIMSON_LILY, configuredCrimsonLily, PlacementUtils.FULL_RANGE);
+        PlacementUtils.register(context, PINWHEEL_DAISY, configuredPinwheel, PlacementUtils.FULL_RANGE);
+        PlacementUtils.register(context, PERENNIAL, configuredPerennial, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        PlacementUtils.register(context, OVERWORLD_BOUNTY, configuredOverworldBounty, PlacementUtils.FULL_RANGE, BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.DOWN.getUnitVec3i(), Blocks.SOUL_SOIL)));
+        PlacementUtils.register(context, BLUE_ANEMONE, configuredBlueAnemone, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        PlacementUtils.register(context, DUSK_POTENTILLA, configuredDuskPotentilla, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
     }
 

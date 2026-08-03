@@ -1,5 +1,7 @@
 package bee.bounty;
 
+import bee.bounty.registry.BountyBlockStateOverrides;
+import bee.bounty.registry.BountyBlockStateProviderTypes;
 import bee.bounty.registry.BountyBlocks;
 import bee.bounty.registry.BountyTags;
 import bee.bounty.worldgen.BountyPlacedFeatures;
@@ -29,6 +31,8 @@ public class BountifulBounty implements ModInitializer {
 
 		BountyBlocks.init();
 		BountyTags.init();
+		BountyBlockStateProviderTypes.init();
+		BountyBlockStateOverrides.init();
 
 		FabricLoader.getInstance().getModContainer(MOD_ID).ifPresent(container -> {
 			ResourceLoader.registerBuiltinPack(id("red_rose_bush_retexture"), container, Component.literal("Red Rose Bush Retexture"), PackActivationType.NORMAL);

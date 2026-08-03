@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "size=1": {
+      "model": "bounty:block/dusk_daisy_1"
+    },
+    "size=2": {
+      "model": "bounty:block/dusk_daisy_2"
+    },
+    "size=3": {
+      "model": "bounty:block/dusk_daisy_3"
+    },
+    "size=4": {
+      "model": "bounty:block/dusk_daisy_4"
+    }
+  }
+}
