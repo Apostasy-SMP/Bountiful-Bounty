@@ -6,8 +6,8 @@
         "type": "minecraft:simple_block",
         "config": {
           "to_place": {
-            "type": "minecraft:weighted_state_provider",
-            "entries": [
+            "type": "bounty:weighted_bounty_flower_provider",
+            "state": [
               {
                 "data": {
                   "Name": "bounty:pink_rose",

@@ -28,7 +28,7 @@ public class WeightedBountyFlowerStateProvider extends BlockStateProvider {
 
     @Override
     protected BlockStateProviderType<?> type() {
-        return BountyBlockStateProviderTypes.BOUNTY_FLOWER_PROVIDER;
+        return BountyBlockStateProviderTypes.WEIGHTED_BOUNTY_FLOWER_PROVIDER;
     }
 
     @Override

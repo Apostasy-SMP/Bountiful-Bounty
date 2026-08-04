@@ -18,7 +18,8 @@ public class BountyBlockStateOverrides {
         BlockStateProviderOverrides.addOverride(Blocks.AZURE_BLUET, BountyBlocks.DUSK_BLUET.defaultBlockState(), 10);
         BlockStateProviderOverrides.addOverride(Blocks.OXEYE_DAISY, BountyBlocks.DUSK_DAISY.defaultBlockState(), 10);
         BlockStateProviderOverrides.addOverride(Blocks.LILY_OF_THE_VALLEY, BountyBlocks.DUSK_LILY.defaultBlockState(), 10);
-        BlockStateProviderOverrides.addOverride(Blocks.DANDELION, BountyBlocks.DUSK_DANDELION.defaultBlockState(), 10);
+        BlockStateProviderOverrides.addOverride(Blocks.DANDELION, BountyBlocks.DUSK_DANDELION.defaultBlockState(), 15);
+        BlockStateProviderOverrides.addOverride(Blocks.POPPY, BountyBlocks.DUSK_POPPY.defaultBlockState(), 15);
 
     }
 

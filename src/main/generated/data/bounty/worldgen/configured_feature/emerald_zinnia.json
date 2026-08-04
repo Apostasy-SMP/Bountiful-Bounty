@@ -6,13 +6,27 @@
         "type": "minecraft:simple_block",
         "config": {
           "to_place": {
-            "type": "bounty:bounty_flower_provider",
-            "state": {
-              "Name": "bounty:emerald_zinnia",
-              "Properties": {
-                "size": "1"
+            "type": "bounty:weighted_bounty_flower_provider",
+            "state": [
+              {
+                "data": {
+                  "Name": "bounty:emerald_zinnia",
+                  "Properties": {
+                    "size": "1"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "bounty:dusk_zinnia",
+                  "Properties": {
+                    "size": "1"
+                  }
+                },
+                "weight": 1
               }
-            }
+            ]
           }
         }
       },

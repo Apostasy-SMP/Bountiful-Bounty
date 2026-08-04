@@ -79,7 +79,7 @@ public class BountyLootGen extends FabricBlockLootTableProvider {
 
     public void createFlowerDrop(Block block, Block potted) {
         add(block, createFlowerDropBuilder(block));
-        add(potted, createPotFlowerItemTable(potted));
+        add(potted, createPotFlowerItemTable(block));
     }
 
 
