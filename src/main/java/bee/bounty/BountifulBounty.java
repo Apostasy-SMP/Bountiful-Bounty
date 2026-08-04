@@ -56,16 +56,26 @@ public class BountifulBounty implements ModInitializer {
 			fabricItemGroupEntries.addAfter(Blocks.ROSE_BUSH, BountyBlocks.TALL_WITHER_ROSE);
 			fabricItemGroupEntries.addAfter(BountyBlocks.TALL_WITHER_ROSE, BountyBlocks.TALL_PINK_ROSE);
 			fabricItemGroupEntries.addAfter(BountyBlocks.TALL_PINK_ROSE, BountyBlocks.TALL_CYAN_ROSE);
-			fabricItemGroupEntries.addAfter(Blocks.POPPY, BountyBlocks.RED_ROSE);
+
+			fabricItemGroupEntries.addAfter(Blocks.BLUE_ORCHID, BountyBlocks.DUSK_ORCHID);
+			fabricItemGroupEntries.addAfter(Blocks.ALLIUM, BountyBlocks.DUSK_ALLIUM);
+			fabricItemGroupEntries.addAfter(Blocks.CORNFLOWER, BountyBlocks.DUSK_CORNFLOWER);
+			fabricItemGroupEntries.addAfter(Blocks.AZURE_BLUET, BountyBlocks.DUSK_BLUET);
+			fabricItemGroupEntries.addAfter(Blocks.OXEYE_DAISY, BountyBlocks.DUSK_DAISY);
+			fabricItemGroupEntries.addAfter(Blocks.DANDELION, BountyBlocks.DUSK_DANDELION);
+			fabricItemGroupEntries.addAfter(Blocks.POPPY, BountyBlocks.DUSK_POPPY);
+			fabricItemGroupEntries.addAfter(Blocks.LILY_OF_THE_VALLEY, BountyBlocks.DUSK_LILY);
+
+			fabricItemGroupEntries.addAfter(BountyBlocks.DUSK_LILY, BountyBlocks.RED_ROSE);
 			fabricItemGroupEntries.addAfter(BountyBlocks.RED_ROSE, BountyBlocks.PINK_ROSE);
 			fabricItemGroupEntries.addAfter(BountyBlocks.PINK_ROSE, BountyBlocks.CYAN_ROSE);
-
 			fabricItemGroupEntries.addAfter(BountyBlocks.CYAN_ROSE, BountyBlocks.BLUE_ANEMONE);
 			fabricItemGroupEntries.addAfter(BountyBlocks.BLUE_ANEMONE, BountyBlocks.DUSK_POTENTILLA);
 			fabricItemGroupEntries.addAfter(BountyBlocks.DUSK_POTENTILLA, BountyBlocks.EMERALD_ZINNIA);
-			fabricItemGroupEntries.addAfter(BountyBlocks.EMERALD_ZINNIA, BountyBlocks.PERENNIAL);
-			fabricItemGroupEntries.addAfter(BountyBlocks.PERENNIAL, BountyBlocks.RELIC_FLOWER);
-			fabricItemGroupEntries.addAfter(BountyBlocks.RELIC_FLOWER, BountyBlocks.PINWHEEL_DAISY);
+			fabricItemGroupEntries.addAfter(BountyBlocks.EMERALD_ZINNIA, BountyBlocks.DUSK_ZINNIA);
+			fabricItemGroupEntries.addAfter(BountyBlocks.DUSK_ZINNIA, BountyBlocks.PERENNIAL);
+			fabricItemGroupEntries.addAfter(BountyBlocks.PERENNIAL, BountyBlocks.DUSK_PERENNIAL);
+			fabricItemGroupEntries.addAfter(BountyBlocks.DUSK_PERENNIAL, BountyBlocks.PINWHEEL_DAISY);
 			fabricItemGroupEntries.addAfter(BountyBlocks.PINWHEEL_DAISY, BountyBlocks.CRIMSON_LILY);
 			fabricItemGroupEntries.addAfter(BountyBlocks.CRIMSON_LILY, BountyBlocks.OVERWORLDS_BOUNTY);
 

@@ -43,7 +43,7 @@ public class BountyLangGen extends FabricLanguageProvider {
         translationBuilder.add(BountyBlocks.DUSK_DANDELION, "Dusk Dandelion");
 
 
-        translationBuilder.add(BountyBlocks.BLACK_SUNFLOWER, "Black Sunflower");
+        translationBuilder.add(BountyBlocks.BLACK_SUNFLOWER, "Dusk Sunflower");
 
         translationBuilder.add(Blocks.ROSE_BUSH, "Red Rose Bush");
         translationBuilder.add(BountyBlocks.TALL_CYAN_ROSE, "Cyan Rose Bush");

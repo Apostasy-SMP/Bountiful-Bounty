@@ -47,10 +47,10 @@ public class BountyConfiguredFeatures {
 
 
         FeatureUtils.register(context, PERENNIAL, Feature.FLOWER, grassPatch(new WeightedBountyFlowerStateProvider(WeightedList.<BlockState>builder().
-                add(BountyBlocks.PERENNIAL.defaultBlockState()).add(BountyBlocks.DUSK_PERENNIAL.defaultBlockState()).build()), 64));
+                add(BountyBlocks.PERENNIAL.defaultBlockState(), 12).add(BountyBlocks.DUSK_PERENNIAL.defaultBlockState()).build()), 64));
 
         FeatureUtils.register(context, EMERALD_ZINNIA, Feature.FLOWER, grassPatch(new WeightedBountyFlowerStateProvider(WeightedList.<BlockState>builder().
-                add(BountyBlocks.EMERALD_ZINNIA.defaultBlockState()).add(BountyBlocks.DUSK_ZINNIA.defaultBlockState()).build()), 64));
+                add(BountyBlocks.EMERALD_ZINNIA.defaultBlockState(), 12).add(BountyBlocks.DUSK_ZINNIA.defaultBlockState()).build()), 64));
 
         FeatureUtils.register(context, CRIMSON_LILY, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new BountyFlowerStateProvider(BountyBlocks.CRIMSON_LILY))));
         FeatureUtils.register(context, PINWHEEL_DAISY, Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(new BountyFlowerStateProvider(BountyBlocks.PINWHEEL_DAISY))));

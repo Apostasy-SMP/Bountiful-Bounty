@@ -36,10 +36,9 @@ public class TallWitherRose extends TallFlowerBlock {
         double d = (double)blockPos.getX() + vec3.x;
         double e = (double)blockPos.getZ() + vec3.z;
 
-        for(int i = 0; i < 3; ++i) {
+        for(int i = 0; i < 6; ++i) {
             if (randomSource.nextBoolean()) {
-                level.addParticle(ParticleTypes.SMOKE, d + randomSource.nextDouble() / (double)5.0F, (double)blockPos.getY() + ((double)0.5F - randomSource.nextDouble()), e + randomSource.nextDouble() / (double)5.0F, 0.0F, 0.0F, 0.0F);
-                level.addParticle(ParticleTypes.SMOKE, d + randomSource.nextDouble() / (double)5.0F, (double)blockPos.getY() + 1 + ((double)0.5F - randomSource.nextDouble()), e + randomSource.nextDouble() / (double)5.0F, 0.0F, 0.0F, 0.0F);
+                level.addParticle(ParticleTypes.SMOKE, d + randomSource.nextDouble() / (double)5.0F, (double)blockPos.getY() + randomSource.nextDouble() + ((double)0.5F - randomSource.nextDouble()), e + randomSource.nextDouble() / (double)5.0F, 0.0F, 0.0F, 0.0F);
             }
         }
 

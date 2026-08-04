@@ -48,7 +48,7 @@ public class BountyPlacedFeatures {
         PlacementUtils.register(context, CYAN_ROSES, configuredCyanRoses, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         PlacementUtils.register(context, PINK_ROSES, configuredPinkRoses, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
-        PlacementUtils.register(context, EMERALD_ZINNIA, configuredEmeraldZinnia, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+        PlacementUtils.register(context, EMERALD_ZINNIA, configuredEmeraldZinnia, RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         PlacementUtils.register(context, CRIMSON_LILY, configuredCrimsonLily, PlacementUtils.FULL_RANGE);
         PlacementUtils.register(context, PINWHEEL_DAISY, configuredPinwheel, PlacementUtils.FULL_RANGE);
         PlacementUtils.register(context, PERENNIAL, configuredPerennial, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
