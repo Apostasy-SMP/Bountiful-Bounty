@@ -25,7 +25,8 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-	modApi 'com.github.Tricangel:Creature-Feature:1.21.11-r4'
+	modImplementation 'com.github.Tricangel:Creature-Feature:1.21.11-r4'
+	include 'com.github.Tricangel:Creature-Feature:1.21.11-r4'
 }
 
 processResources {
