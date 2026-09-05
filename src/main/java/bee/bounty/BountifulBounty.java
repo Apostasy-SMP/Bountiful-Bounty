@@ -42,7 +42,7 @@ public class BountifulBounty implements ModInitializer {
 
 			if (resourceKey.identifier().getPath().contains("archaeology")) {
 				builder.modifyPools(builder1 -> {
-					builder1.add(LootItem.lootTableItem(BountyBlocks.RELIC_FLOWER));
+					builder1.add(LootItem.lootTableItem(BountyBlocks.RELIC_FLOWER).setWeight(4));
 				});
 			}
 
@@ -78,6 +78,8 @@ public class BountifulBounty implements ModInitializer {
 			fabricItemGroupEntries.addAfter(BountyBlocks.DUSK_PERENNIAL, BountyBlocks.PINWHEEL_DAISY);
 			fabricItemGroupEntries.addAfter(BountyBlocks.PINWHEEL_DAISY, BountyBlocks.CRIMSON_LILY);
 			fabricItemGroupEntries.addAfter(BountyBlocks.CRIMSON_LILY, BountyBlocks.OVERWORLDS_BOUNTY);
+
+			fabricItemGroupEntries.addAfter(BountyBlocks.OVERWORLDS_BOUNTY, BountyBlocks.RELIC_FLOWER);
 
 		});
 

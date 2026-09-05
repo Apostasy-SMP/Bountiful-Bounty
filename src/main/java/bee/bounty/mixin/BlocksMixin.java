@@ -2,9 +2,11 @@ package bee.bounty.mixin;
 
 import bee.bounty.block.BountifulFlowerBlock;
 import bee.bounty.block.BountifulWitherRoseBlock;
+import bee.bounty.block.DuplicatingFlowerBlock;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.EyeblossomBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -29,6 +31,8 @@ public abstract class BlocksMixin {
 			case "cornflower" -> properties -> new BountifulFlowerBlock(MobEffects.JUMP_BOOST, 5.0F, properties);
 			case "lily_of_the_valley" -> properties -> new BountifulFlowerBlock(MobEffects.POISON, 11.0F, properties);
 			case "wither_rose" -> properties -> new BountifulWitherRoseBlock(MobEffects.WITHER, 7.0F, properties);
+			case "closed_eyeblossom" -> properties -> new DuplicatingFlowerBlock(EyeblossomBlock.Type.CLOSED, properties);
+			case "open_eyeblossom" -> properties -> new DuplicatingFlowerBlock(EyeblossomBlock.Type.OPEN, properties);
 			default -> value;
 		};
 	}
