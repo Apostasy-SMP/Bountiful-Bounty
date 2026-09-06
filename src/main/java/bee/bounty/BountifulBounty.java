@@ -42,7 +42,7 @@ public class BountifulBounty implements ModInitializer {
 
 			if (resourceKey.identifier().getPath().contains("archaeology")) {
 				builder.modifyPools(builder1 -> {
-					builder1.add(LootItem.lootTableItem(BountyBlocks.RELIC_FLOWER).setWeight(4));
+					builder1.add(LootItem.lootTableItem(BountyBlocks.RELIC_FLOWER).setWeight(3));
 				});
 			}
 
