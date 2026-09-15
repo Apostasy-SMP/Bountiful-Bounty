@@ -87,6 +87,6 @@ public class BountifulWitherRoseBlock extends WitherRoseBlock implements Bonemea
     }
 
     public MobEffectInstance getBeeInteractionEffect(BlockState state) {
-        return new MobEffectInstance(MobEffects.WITHER, (int) (40 * (state.getValue(SIZE) * 0.5)) + 10);
+        return new MobEffectInstance(MobEffects.WITHER, (int) (40 * (state.getValue(SIZE) + 1)));
     }
 }
