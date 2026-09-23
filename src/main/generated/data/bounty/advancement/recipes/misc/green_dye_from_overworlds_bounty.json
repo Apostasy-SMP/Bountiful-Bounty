@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#minecraft:flowers"
+            "items": "bounty:overworlds_bounty"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bounty:green_dye_from_overworlds_bounty"
+        "recipes": "bounty:green_dye_from_overworlds_bounty"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

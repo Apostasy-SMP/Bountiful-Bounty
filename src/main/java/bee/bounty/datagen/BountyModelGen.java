@@ -4,7 +4,7 @@ import bee.bounty.BountifulBounty;
 import bee.bounty.registry.BountyBlockProperties;
 import bee.bounty.registry.BountyBlocks;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.MultiVariant;
@@ -13,6 +13,7 @@ import net.minecraft.client.data.models.blockstates.PropertyDispatch;
 import net.minecraft.client.data.models.model.ModelLocationUtils;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
@@ -23,7 +24,8 @@ import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant
 
 
 public class BountyModelGen extends FabricModelProvider {
-    public BountyModelGen(FabricDataOutput output) {
+
+    public BountyModelGen(FabricPackOutput output) {
         super(output);
     }
 
@@ -133,17 +135,17 @@ public class BountyModelGen extends FabricModelProvider {
 
     public TextureMapping getFlowerTextureMapping(Block block, String suffix) {
         Identifier identifier = BountifulBounty.id(BuiltInRegistries.BLOCK.getKey(block).getPath()).withPrefix("block/").withSuffix(suffix);
-        return TextureMapping.cross(identifier);
+        return TextureMapping.cross(new Material(identifier));
     }
 
     public TextureMapping getFlowerPotTextureMapping(Block block, String suffix) {
         Identifier identifier = BountifulBounty.id(BuiltInRegistries.BLOCK.getKey(block).getPath()).withPrefix("block/").withSuffix(suffix);
-        return TextureMapping.plant(identifier);
+        return TextureMapping.plant(new Material(identifier));
     }
 
     public TextureMapping getFlowerItemTextureMapping(Block block) {
         Identifier identifier = BountifulBounty.id(BuiltInRegistries.BLOCK.getKey(block).getPath()).withPrefix("block/").withSuffix("_1");
-        return TextureMapping.layer0(identifier);
+        return TextureMapping.layer0(new Material(identifier));
     }
 
 

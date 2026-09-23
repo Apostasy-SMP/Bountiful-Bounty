@@ -2,28 +2,23 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "block": "bounty:black_sunflower",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "half": "lower"
-              }
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "bounty:black_sunflower",
+            "state": {
+              "half": "lower"
             }
-          ],
+          },
           "name": "bounty:black_sunflower"
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     }
   ]
 }

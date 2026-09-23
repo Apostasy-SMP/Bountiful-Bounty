@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#minecraft:flowers"
+            "items": "bounty:relic_flower"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bounty:brown_dye_from_relic_flower"
+        "recipes": "bounty:brown_dye_from_relic_flower"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

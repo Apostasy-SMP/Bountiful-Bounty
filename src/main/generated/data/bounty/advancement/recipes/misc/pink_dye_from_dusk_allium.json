@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#minecraft:flowers"
+            "items": "bounty:dusk_allium"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bounty:pink_dye_from_dusk_allium"
+        "recipes": "bounty:pink_dye_from_dusk_allium"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

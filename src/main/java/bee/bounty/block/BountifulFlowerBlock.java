@@ -15,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.BonemealSource;
 import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -51,22 +52,22 @@ public class BountifulFlowerBlock extends FlowerBlock implements BonemealableBlo
 
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, BonemealSource source) {
         return true;
     }
 
     @Override
-    public boolean isBonemealSuccess(Level level, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {
+    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
         return true;
     }
 
     @Override
-    public void performBonemeal(ServerLevel serverLevel, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {
-        if (blockState.getValue(SIZE) < 4) {
-            serverLevel.setBlockAndUpdate(blockPos, blockState.cycle(SIZE));
+    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
+        if (state.getValue(SIZE) < 4) {
+            level.setBlockAndUpdate(pos, state.cycle(SIZE));
         } else {
-            Containers.dropItemStack(serverLevel, blockPos.getX(), blockPos.getY(), blockPos.getZ(), this.asItem().getDefaultInstance());
+            Containers.dropItemStack(level, pos.getX(), pos.getY(), pos.getZ(), this.asItem().getDefaultInstance());
         }
-        BoneMealItem.addGrowthParticles(serverLevel, blockPos, 30);
+        BoneMealItem.addGrowthParticles(level, pos, 30);
     }
 }

@@ -5,7 +5,6 @@ import bee.bounty.block.BountifulFlowerBlock;
 import bee.bounty.block.NetherFlowerBlock;
 import bee.bounty.block.OverworldsBountyBlock;
 import bee.bounty.block.TallWitherRose;
-import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -13,9 +12,13 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.TallFlowerBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.function.Function;
 
@@ -84,10 +87,9 @@ public class BountyBlocks {
 
         if (shouldRegisterItem) {
             ResourceKey<Item> itemKey = keyOfItem(name);
-            BlockItem blockItem = new BlockItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix());
+            BlockItem blockItem = new BlockItem(block, new Item.Properties().compostable(ContextIntProviders.COMPOSTABLE_LOW).setId(itemKey).useBlockDescriptionPrefix());
             Registry.register(BuiltInRegistries.ITEM, itemKey, blockItem);
 
-            CompostingChanceRegistry.INSTANCE.add(blockItem, 0.2f);
         }
         return Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
     }

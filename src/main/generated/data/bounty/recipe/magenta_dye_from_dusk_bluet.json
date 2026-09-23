@@ -1,11 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "misc",
   "ingredients": [
     "bounty:dusk_bluet"
   ],
   "result": {
-    "count": 1,
     "id": "minecraft:magenta_dye"
   }
 }

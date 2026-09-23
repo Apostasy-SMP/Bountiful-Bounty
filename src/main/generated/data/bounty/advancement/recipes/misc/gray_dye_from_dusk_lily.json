@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#minecraft:flowers"
+            "items": "bounty:dusk_lily"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bounty:gray_dye_from_dusk_lily"
+        "recipes": "bounty:gray_dye_from_dusk_lily"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

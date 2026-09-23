@@ -2,10 +2,9 @@ package bee.bounty.datagen;
 
 import bee.bounty.registry.BountyBlockProperties;
 import bee.bounty.registry.BountyBlocks;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-import net.minecraft.advancements.criterion.StatePropertiesPredicate;
-import net.minecraft.client.data.models.BlockModelGenerators;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
+import net.minecraft.advancements.predicates.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -14,14 +13,14 @@ import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
-import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.predicates.MatchBlock;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ContextIntProviders;
 
 import java.util.concurrent.CompletableFuture;
 
-public class BountyLootGen extends FabricBlockLootTableProvider {
-    public BountyLootGen(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
-        super(dataOutput, registryLookup);
+public class BountyLootGen extends FabricBlockLootSubProvider {
+    public BountyLootGen(FabricPackOutput packOutput, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+        super(packOutput, registriesFuture);
     }
 
     @Override
@@ -86,25 +85,21 @@ public class BountyLootGen extends FabricBlockLootTableProvider {
     public LootTable.Builder createFlowerDropBuilder(Block block) {
         return LootTable.lootTable()
                 .withPool(this.applyExplosionCondition(block, LootPool.lootPool()
-                        .setRolls(new ConstantValue(1))
+                        .setRolls(ContextIntProviders.exactly(1))
                         .add(LootItem.lootTableItem(block))
-                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BountyBlockProperties.SIZE, 1))))
+                        .when(MatchBlock.blockMatches(this.blocks, block, StatePropertiesPredicate.Builder.properties().hasProperty(BountyBlockProperties.SIZE, 1))))
                 ).withPool(this.applyExplosionCondition(block, LootPool.lootPool()
-                        .setRolls(new ConstantValue(2))
+                        .setRolls(ContextIntProviders.exactly(2))
                         .add(LootItem.lootTableItem(block))
-                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BountyBlockProperties.SIZE, 2))))
+                        .when(MatchBlock.blockMatches(this.blocks, block, StatePropertiesPredicate.Builder.properties().hasProperty(BountyBlockProperties.SIZE, 2))))
                 ).withPool(this.applyExplosionCondition(block, LootPool.lootPool()
-                        .setRolls(new ConstantValue(3))
+                        .setRolls(ContextIntProviders.exactly(3))
                         .add(LootItem.lootTableItem(block))
-                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BountyBlockProperties.SIZE, 3))))
+                        .when(MatchBlock.blockMatches(this.blocks, block, StatePropertiesPredicate.Builder.properties().hasProperty(BountyBlockProperties.SIZE, 3))))
                 ).withPool(this.applyExplosionCondition(block, LootPool.lootPool()
-                        .setRolls(new ConstantValue(4))
+                        .setRolls(ContextIntProviders.exactly(4))
                         .add(LootItem.lootTableItem(block))
-                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BountyBlockProperties.SIZE, 4)))));
+                        .when(MatchBlock.blockMatches(this.blocks, block, StatePropertiesPredicate.Builder.properties().hasProperty(BountyBlockProperties.SIZE, 4)))));
 
     }
 

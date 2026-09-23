@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#minecraft:flowers"
+            "items": "bounty:dusk_zinnia"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bounty:brown_dye_from_dusk_zinnia"
+        "recipes": "bounty:brown_dye_from_dusk_zinnia"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

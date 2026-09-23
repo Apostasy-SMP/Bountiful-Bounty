@@ -10,8 +10,10 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
-import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.placement.*;
+
+import java.util.Collections;
 
 public class BountyPlacedFeatures {
 
@@ -29,18 +31,18 @@ public class BountyPlacedFeatures {
     
     public static void configure(BootstrapContext<PlacedFeature> context) {
 
-        HolderGetter<ConfiguredFeature<?, ?>> holderGetter = context.lookup(Registries.CONFIGURED_FEATURE);
+        HolderGetter<Feature> holderGetter = context.lookup(Registries.FEATURE);
 
-        Holder<ConfiguredFeature<?, ?>> configuredRedRoses = holderGetter.getOrThrow(BountyConfiguredFeatures.RED_ROSES);
-        Holder<ConfiguredFeature<?, ?>> configuredCyanRoses = holderGetter.getOrThrow(BountyConfiguredFeatures.CYAN_ROSES);
-        Holder<ConfiguredFeature<?, ?>> configuredPinkRoses = holderGetter.getOrThrow(BountyConfiguredFeatures.PINK_ROSES);
-        Holder<ConfiguredFeature<?, ?>> configuredEmeraldZinnia = holderGetter.getOrThrow(BountyConfiguredFeatures.EMERALD_ZINNIA);
-        Holder<ConfiguredFeature<?, ?>> configuredCrimsonLily = holderGetter.getOrThrow(BountyConfiguredFeatures.CRIMSON_LILY);
-        Holder<ConfiguredFeature<?, ?>> configuredPerennial = holderGetter.getOrThrow(BountyConfiguredFeatures.PERENNIAL);
-        Holder<ConfiguredFeature<?, ?>> configuredOverworldBounty = holderGetter.getOrThrow(BountyConfiguredFeatures.OVERWORLD_BOUNTY);
-        Holder<ConfiguredFeature<?, ?>> configuredBlueAnemone = holderGetter.getOrThrow(BountyConfiguredFeatures.BLUE_ANEMONE);
-        Holder<ConfiguredFeature<?, ?>> configuredDuskPotentilla = holderGetter.getOrThrow(BountyConfiguredFeatures.DUSK_POTENTILLA);
-        Holder<ConfiguredFeature<?, ?>> configuredPinwheel = holderGetter.getOrThrow(BountyConfiguredFeatures.PINWHEEL_DAISY);
+        Holder<Feature> configuredRedRoses = holderGetter.getOrThrow(BountyConfiguredFeatures.RED_ROSES);
+        Holder<Feature> configuredCyanRoses = holderGetter.getOrThrow(BountyConfiguredFeatures.CYAN_ROSES);
+        Holder<Feature> configuredPinkRoses = holderGetter.getOrThrow(BountyConfiguredFeatures.PINK_ROSES);
+        Holder<Feature> configuredEmeraldZinnia = holderGetter.getOrThrow(BountyConfiguredFeatures.EMERALD_ZINNIA);
+        Holder<Feature> configuredCrimsonLily = holderGetter.getOrThrow(BountyConfiguredFeatures.CRIMSON_LILY);
+        Holder<Feature> configuredPerennial = holderGetter.getOrThrow(BountyConfiguredFeatures.PERENNIAL);
+        Holder<Feature> configuredOverworldBounty = holderGetter.getOrThrow(BountyConfiguredFeatures.OVERWORLD_BOUNTY);
+        Holder<Feature> configuredBlueAnemone = holderGetter.getOrThrow(BountyConfiguredFeatures.BLUE_ANEMONE);
+        Holder<Feature> configuredDuskPotentilla = holderGetter.getOrThrow(BountyConfiguredFeatures.DUSK_POTENTILLA);
+        Holder<Feature> configuredPinwheel = holderGetter.getOrThrow(BountyConfiguredFeatures.PINWHEEL_DAISY);
 
 
 
@@ -52,7 +54,7 @@ public class BountyPlacedFeatures {
         PlacementUtils.register(context, CRIMSON_LILY, configuredCrimsonLily, PlacementUtils.FULL_RANGE);
         PlacementUtils.register(context, PINWHEEL_DAISY, configuredPinwheel, PlacementUtils.FULL_RANGE);
         PlacementUtils.register(context, PERENNIAL, configuredPerennial, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
-        PlacementUtils.register(context, OVERWORLD_BOUNTY, configuredOverworldBounty, PlacementUtils.FULL_RANGE, BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.DOWN.getUnitVec3i(), Blocks.SOUL_SOIL)));
+        PlacementUtils.register(context, OVERWORLD_BOUNTY, configuredOverworldBounty, PlacementUtils.FULL_RANGE, BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.DOWN.getUnitVec3i(), Collections.singletonList(Blocks.SOUL_SOIL))));
         PlacementUtils.register(context, BLUE_ANEMONE, configuredBlueAnemone, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
         PlacementUtils.register(context, DUSK_POTENTILLA, configuredDuskPotentilla, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 

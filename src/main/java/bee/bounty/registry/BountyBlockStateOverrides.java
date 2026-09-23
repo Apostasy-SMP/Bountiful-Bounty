@@ -3,18 +3,16 @@ package bee.bounty.registry;
 import bee.bounty.worldgen.WeightedBountyFlowerStateProvider;
 import bee.creature.registry.BlockStateProviderOverrides;
 import net.minecraft.util.random.WeightedList;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
-import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 
 public class BountyBlockStateOverrides {
 
     public static void init() {
 
-        BlockStateProviderOverrides.addOverride(Blocks.SUNFLOWER, BlockStateProvider.simple(BountyBlocks.BLACK_SUNFLOWER), 19);
+        BlockStateProviderOverrides.addOverride(Blocks.SUNFLOWER, BlockStateProvider.of(BountyBlocks.BLACK_SUNFLOWER), 19);
         BlockStateProviderOverrides.addOverride(Blocks.PINK_TULIP, flowerProvider(Blocks.PINK_TULIP, BountyBlocks.DUSK_TULIP, 19));
         BlockStateProviderOverrides.addOverride(Blocks.ORANGE_TULIP, flowerProvider(Blocks.ORANGE_TULIP, BountyBlocks.DUSK_TULIP, 19));
         BlockStateProviderOverrides.addOverride(Blocks.RED_TULIP, flowerProvider(Blocks.RED_TULIP, BountyBlocks.DUSK_TULIP, 19));

@@ -24,7 +24,7 @@ public class BountifulBountyDataGenerator implements DataGeneratorEntrypoint {
 
 	@Override
 	public void buildRegistry(RegistrySetBuilder registryBuilder) {
-		registryBuilder.add(Registries.CONFIGURED_FEATURE, BountyConfiguredFeatures::configure);
+		registryBuilder.add(Registries.FEATURE, BountyConfiguredFeatures::configure);
 		registryBuilder.add(Registries.PLACED_FEATURE, BountyPlacedFeatures::configure);
 	}
 }

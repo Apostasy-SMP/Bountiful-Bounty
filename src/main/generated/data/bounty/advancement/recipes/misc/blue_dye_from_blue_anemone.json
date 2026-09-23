@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#minecraft:flowers"
+            "items": "bounty:blue_anemone"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bounty:blue_dye_from_blue_anemone"
+        "recipes": "bounty:blue_dye_from_blue_anemone"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

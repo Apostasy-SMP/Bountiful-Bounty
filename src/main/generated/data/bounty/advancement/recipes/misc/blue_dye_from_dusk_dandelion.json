@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#minecraft:flowers"
+            "items": "bounty:dusk_dandelion"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bounty:blue_dye_from_dusk_dandelion"
+        "recipes": "bounty:blue_dye_from_dusk_dandelion"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

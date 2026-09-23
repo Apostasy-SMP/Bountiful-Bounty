@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "bounty:weighted_bounty_flower_provider",
+    "state": [
+      {
+        "data": "bounty:cyan_rose",
+        "weight": 1
+      },
+      {
+        "data": "bounty:tall_cyan_rose",
+        "weight": 1
+      }
+    ]
+  }
+}

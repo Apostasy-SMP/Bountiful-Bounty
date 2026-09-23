@@ -2,92 +2,100 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "block": "bounty:dusk_zinnia",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "size": "1"
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:match_block",
+            "blocks": "bounty:dusk_zinnia",
+            "state": {
+              "size": "1"
+            }
+          },
+          {
+            "type": "minecraft:survives_explosion"
           }
-        },
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
+        ]
+      },
       "entries": [
         {
           "type": "minecraft:item",
           "name": "bounty:dusk_zinnia"
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     },
     {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "block": "bounty:dusk_zinnia",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "size": "2"
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:match_block",
+            "blocks": "bounty:dusk_zinnia",
+            "state": {
+              "size": "2"
+            }
+          },
+          {
+            "type": "minecraft:survives_explosion"
           }
-        },
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
+        ]
+      },
       "entries": [
         {
           "type": "minecraft:item",
           "name": "bounty:dusk_zinnia"
         }
       ],
-      "rolls": 2.0
+      "rolls": 2
     },
     {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "block": "bounty:dusk_zinnia",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "size": "3"
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:match_block",
+            "blocks": "bounty:dusk_zinnia",
+            "state": {
+              "size": "3"
+            }
+          },
+          {
+            "type": "minecraft:survives_explosion"
           }
-        },
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
+        ]
+      },
       "entries": [
         {
           "type": "minecraft:item",
           "name": "bounty:dusk_zinnia"
         }
       ],
-      "rolls": 3.0
+      "rolls": 3
     },
     {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "block": "bounty:dusk_zinnia",
-          "condition": "minecraft:block_state_property",
-          "properties": {
-            "size": "4"
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:match_block",
+            "blocks": "bounty:dusk_zinnia",
+            "state": {
+              "size": "4"
+            }
+          },
+          {
+            "type": "minecraft:survives_explosion"
           }
-        },
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
+        ]
+      },
       "entries": [
         {
           "type": "minecraft:item",
           "name": "bounty:dusk_zinnia"
         }
       ],
-      "rolls": 4.0
+      "rolls": 4
     }
   ]
 }

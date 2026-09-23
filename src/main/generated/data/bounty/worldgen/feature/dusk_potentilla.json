@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "bounty:bounty_flower_provider",
+    "state": "bounty:dusk_potentilla"
+  }
+}

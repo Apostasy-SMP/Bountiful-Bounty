@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#minecraft:flowers"
+            "items": "bounty:perennial"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bounty:purple_dye_from_perennial"
+        "recipes": "bounty:purple_dye_from_perennial"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

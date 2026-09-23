@@ -8,7 +8,7 @@ import bee.bounty.worldgen.BountyPlacedFeatures;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.resource.v1.ResourceLoader;
 import net.fabricmc.fabric.api.resource.v1.pack.PackActivationType;
@@ -49,37 +49,37 @@ public class BountifulBounty implements ModInitializer {
 		});
 
 
-		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.NATURAL_BLOCKS).register(fabricItemGroupEntries -> {
+		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.NATURAL_BLOCKS).register(fabricItemGroupEntries -> {
 
-			fabricItemGroupEntries.addAfter(Blocks.SUNFLOWER, BountyBlocks.BLACK_SUNFLOWER);
-			fabricItemGroupEntries.addAfter(Blocks.PINK_TULIP, BountyBlocks.DUSK_TULIP);
-			fabricItemGroupEntries.addAfter(Blocks.ROSE_BUSH, BountyBlocks.TALL_WITHER_ROSE);
-			fabricItemGroupEntries.addAfter(BountyBlocks.TALL_WITHER_ROSE, BountyBlocks.TALL_PINK_ROSE);
-			fabricItemGroupEntries.addAfter(BountyBlocks.TALL_PINK_ROSE, BountyBlocks.TALL_CYAN_ROSE);
+			fabricItemGroupEntries.insertAfter(Blocks.SUNFLOWER, BountyBlocks.BLACK_SUNFLOWER);
+			fabricItemGroupEntries.insertAfter(Blocks.PINK_TULIP, BountyBlocks.DUSK_TULIP);
+			fabricItemGroupEntries.insertAfter(Blocks.ROSE_BUSH, BountyBlocks.TALL_WITHER_ROSE);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.TALL_WITHER_ROSE, BountyBlocks.TALL_PINK_ROSE);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.TALL_PINK_ROSE, BountyBlocks.TALL_CYAN_ROSE);
 
-			fabricItemGroupEntries.addAfter(Blocks.BLUE_ORCHID, BountyBlocks.DUSK_ORCHID);
-			fabricItemGroupEntries.addAfter(Blocks.ALLIUM, BountyBlocks.DUSK_ALLIUM);
-			fabricItemGroupEntries.addAfter(Blocks.CORNFLOWER, BountyBlocks.DUSK_CORNFLOWER);
-			fabricItemGroupEntries.addAfter(Blocks.AZURE_BLUET, BountyBlocks.DUSK_BLUET);
-			fabricItemGroupEntries.addAfter(Blocks.OXEYE_DAISY, BountyBlocks.DUSK_DAISY);
-			fabricItemGroupEntries.addAfter(Blocks.DANDELION, BountyBlocks.DUSK_DANDELION);
-			fabricItemGroupEntries.addAfter(Blocks.POPPY, BountyBlocks.DUSK_POPPY);
-			fabricItemGroupEntries.addAfter(Blocks.LILY_OF_THE_VALLEY, BountyBlocks.DUSK_LILY);
+			fabricItemGroupEntries.insertAfter(Blocks.BLUE_ORCHID, BountyBlocks.DUSK_ORCHID);
+			fabricItemGroupEntries.insertAfter(Blocks.ALLIUM, BountyBlocks.DUSK_ALLIUM);
+			fabricItemGroupEntries.insertAfter(Blocks.CORNFLOWER, BountyBlocks.DUSK_CORNFLOWER);
+			fabricItemGroupEntries.insertAfter(Blocks.AZURE_BLUET, BountyBlocks.DUSK_BLUET);
+			fabricItemGroupEntries.insertAfter(Blocks.OXEYE_DAISY, BountyBlocks.DUSK_DAISY);
+			fabricItemGroupEntries.insertAfter(Blocks.DANDELION, BountyBlocks.DUSK_DANDELION);
+			fabricItemGroupEntries.insertAfter(Blocks.POPPY, BountyBlocks.DUSK_POPPY);
+			fabricItemGroupEntries.insertAfter(Blocks.LILY_OF_THE_VALLEY, BountyBlocks.DUSK_LILY);
 
-			fabricItemGroupEntries.addAfter(BountyBlocks.DUSK_LILY, BountyBlocks.RED_ROSE);
-			fabricItemGroupEntries.addAfter(BountyBlocks.RED_ROSE, BountyBlocks.PINK_ROSE);
-			fabricItemGroupEntries.addAfter(BountyBlocks.PINK_ROSE, BountyBlocks.CYAN_ROSE);
-			fabricItemGroupEntries.addAfter(BountyBlocks.CYAN_ROSE, BountyBlocks.BLUE_ANEMONE);
-			fabricItemGroupEntries.addAfter(BountyBlocks.BLUE_ANEMONE, BountyBlocks.DUSK_POTENTILLA);
-			fabricItemGroupEntries.addAfter(BountyBlocks.DUSK_POTENTILLA, BountyBlocks.EMERALD_ZINNIA);
-			fabricItemGroupEntries.addAfter(BountyBlocks.EMERALD_ZINNIA, BountyBlocks.DUSK_ZINNIA);
-			fabricItemGroupEntries.addAfter(BountyBlocks.DUSK_ZINNIA, BountyBlocks.PERENNIAL);
-			fabricItemGroupEntries.addAfter(BountyBlocks.PERENNIAL, BountyBlocks.DUSK_PERENNIAL);
-			fabricItemGroupEntries.addAfter(BountyBlocks.DUSK_PERENNIAL, BountyBlocks.PINWHEEL_DAISY);
-			fabricItemGroupEntries.addAfter(BountyBlocks.PINWHEEL_DAISY, BountyBlocks.CRIMSON_LILY);
-			fabricItemGroupEntries.addAfter(BountyBlocks.CRIMSON_LILY, BountyBlocks.OVERWORLDS_BOUNTY);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.DUSK_LILY, BountyBlocks.RED_ROSE);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.RED_ROSE, BountyBlocks.PINK_ROSE);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.PINK_ROSE, BountyBlocks.CYAN_ROSE);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.CYAN_ROSE, BountyBlocks.BLUE_ANEMONE);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.BLUE_ANEMONE, BountyBlocks.DUSK_POTENTILLA);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.DUSK_POTENTILLA, BountyBlocks.EMERALD_ZINNIA);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.EMERALD_ZINNIA, BountyBlocks.DUSK_ZINNIA);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.DUSK_ZINNIA, BountyBlocks.PERENNIAL);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.PERENNIAL, BountyBlocks.DUSK_PERENNIAL);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.DUSK_PERENNIAL, BountyBlocks.PINWHEEL_DAISY);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.PINWHEEL_DAISY, BountyBlocks.CRIMSON_LILY);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.CRIMSON_LILY, BountyBlocks.OVERWORLDS_BOUNTY);
 
-			fabricItemGroupEntries.addAfter(BountyBlocks.OVERWORLDS_BOUNTY, BountyBlocks.RELIC_FLOWER);
+			fabricItemGroupEntries.insertAfter(BountyBlocks.OVERWORLDS_BOUNTY, BountyBlocks.RELIC_FLOWER);
 
 		});
 

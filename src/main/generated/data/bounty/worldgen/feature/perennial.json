@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "type": "bounty:weighted_bounty_flower_provider",
+    "state": [
+      {
+        "data": "bounty:perennial",
+        "weight": 12
+      },
+      {
+        "data": "bounty:dusk_perennial",
+        "weight": 1
+      }
+    ]
+  }
+}

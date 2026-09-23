@@ -3,14 +3,15 @@ package bee.bounty.mixin;
 import bee.bounty.block.BountifulFlowerBlock;
 import bee.bounty.block.BountifulWitherRoseBlock;
 import bee.bounty.block.DuplicatingFlowerBlock;
+import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import net.minecraft.references.BlockItemId;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.EyeblossomBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 import java.util.function.Function;
 
@@ -18,10 +19,12 @@ import java.util.function.Function;
 public abstract class BlocksMixin {
 
 
-	@ModifyVariable(at = @At("HEAD"), method = "register(Ljava/lang/String;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;", argsOnly = true)
-	private static Function<BlockBehaviour.Properties, Block> init(Function<BlockBehaviour.Properties, Block> value, String id) {
+	@WrapMethod(method = "register(Lnet/minecraft/references/BlockItemId;Ljava/util/function/Function;Lnet/minecraft/world/level/block/state/BlockBehaviour$Properties;)Lnet/minecraft/world/level/block/Block;")
+	private static Block init(BlockItemId id, Function<BlockBehaviour.Properties, Block> factory, BlockBehaviour.Properties properties1, Operation<Block> original) {
 
-		return switch (id) {
+		String s = id.block().identifier().getPath();
+
+		factory = switch (s) {
 			case "red_tulip", "pink_tulip", "white_tulip", "orange_tulip" -> properties -> new BountifulFlowerBlock(MobEffects.WEAKNESS, 7.0F, properties);
             case "dandelion", "blue_orchid" -> properties -> new BountifulFlowerBlock(MobEffects.SATURATION, 0.35F, properties);
 			case "poppy" -> properties -> new BountifulFlowerBlock(MobEffects.NIGHT_VISION, 5.0F, properties);
@@ -33,7 +36,9 @@ public abstract class BlocksMixin {
 			case "wither_rose" -> properties -> new BountifulWitherRoseBlock(MobEffects.WITHER, 7.0F, properties);
 			case "closed_eyeblossom" -> properties -> new DuplicatingFlowerBlock(EyeblossomBlock.Type.CLOSED, properties);
 			case "open_eyeblossom" -> properties -> new DuplicatingFlowerBlock(EyeblossomBlock.Type.OPEN, properties);
-			default -> value;
+			default -> factory;
 		};
+
+		return original.call(id, factory, properties1);
 	}
 }

@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#minecraft:flowers"
+            "items": "bounty:dusk_tulip"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bounty:purple_dye_from_dusk_tulip"
+        "recipes": "bounty:purple_dye_from_dusk_tulip"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#minecraft:flowers"
+            "items": "bounty:dusk_bluet"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bounty:magenta_dye_from_dusk_bluet"
+        "recipes": "bounty:magenta_dye_from_dusk_bluet"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

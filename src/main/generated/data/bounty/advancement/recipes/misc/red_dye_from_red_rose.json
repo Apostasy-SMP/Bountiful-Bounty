@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#minecraft:flowers"
+            "items": "bounty:red_rose"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "bounty:red_dye_from_red_rose"
+        "recipes": "bounty:red_dye_from_red_rose"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

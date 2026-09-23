@@ -1,50 +1,57 @@
 package bee.bounty.datagen;
 
-import bee.bounty.registry.BountyBlocks;
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import bee.bounty.BountifulBounty;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 
 import java.util.concurrent.CompletableFuture;
 
-public class BountyTagGen extends FabricTagProvider.BlockTagProvider {
-    public BountyTagGen(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
-        super(output, registriesFuture);
+public class BountyTagGen extends FabricTagsProvider.BlockTagsProvider {
+    public BountyTagGen(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registryLookupFuture) {
+        super(output, registryLookupFuture);
     }
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
 
-        valueLookupBuilder(BlockTags.SMALL_FLOWERS)
-                .add(BountyBlocks.RED_ROSE)
-                .add(BountyBlocks.CYAN_ROSE)
-                .add(BountyBlocks.PINK_ROSE)
-                .add(BountyBlocks.BLUE_ANEMONE)
-                .add(BountyBlocks.CRIMSON_LILY)
-                .add(BountyBlocks.DUSK_PERENNIAL)
-                .add(BountyBlocks.DUSK_POTENTILLA)
-                .add(BountyBlocks.DUSK_TULIP)
-                .add(BountyBlocks.DUSK_ZINNIA)
-                .add(BountyBlocks.OVERWORLDS_BOUNTY)
-                .add(BountyBlocks.PERENNIAL)
-                .add(BountyBlocks.DUSK_DAISY)
-                .add(BountyBlocks.RELIC_FLOWER)
-                .add(BountyBlocks.PINWHEEL_DAISY)
-                .add(BountyBlocks.DUSK_ORCHID)
-                .add(BountyBlocks.DUSK_POPPY)
-                .add(BountyBlocks.DUSK_ALLIUM)
-                .add(BountyBlocks.DUSK_CORNFLOWER)
-                .add(BountyBlocks.DUSK_BLUET)
-                .add(BountyBlocks.DUSK_LILY)
-                .add(BountyBlocks.DUSK_DANDELION);
+        builder(BlockTags.SMALL_FLOWERS)
+                .add(key("red_rose"))
+                .add(key("cyan_rose"))
+                .add(key("pink_rose"))
+                .add(key("blue_anemone"))
+                .add(key("crimson_lily"))
+                .add(key("dusk_perennial"))
+                .add(key("dusk_potentilla"))
+                .add(key("dusk_tulip"))
+                .add(key("dusk_zinnia"))
+                .add(key("overworlds_bounty"))
+                .add(key("perennial"))
+                .add(key("dusk_daisy"))
+                .add(key("relic_flower"))
+                .add(key("pinwheel_daisy"))
+                .add(key("dusk_orchid"))
+                .add(key("dusk_poppy"))
+                .add(key("dusk_allium"))
+                .add(key("dusk_cornflower"))
+                .add(key("dusk_bluet"))
+                .add(key("dusk_lily"))
+                .add(key("dusk_dandelion"));
 
-        valueLookupBuilder(BlockTags.FLOWERS)
-                .add(BountyBlocks.TALL_CYAN_ROSE)
-                .add(BountyBlocks.TALL_WITHER_ROSE)
-                .add(BountyBlocks.TALL_PINK_ROSE)
-                .add(BountyBlocks.BLACK_SUNFLOWER);
+        builder(BlockTags.FLOWERS)
+                .add(key("tall_cyan_rose"))
+                .add(key("tall_wither_rose"))
+                .add(key("tall_pink_rose"))
+                .add(key("black_sunflower"));
+        
 
-
+    }
+    
+    private static ResourceKey<Block> key(String s) {
+        return ResourceKey.create(Registries.BLOCK, BountifulBounty.id(s));
     }
 }
