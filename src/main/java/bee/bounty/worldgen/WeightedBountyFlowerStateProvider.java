@@ -1,13 +1,12 @@
 package bee.bounty.worldgen;
 
-import bee.bounty.block.BountifulFlowerBlock;
+import bee.bounty.block.flower.BountifulFlowerBlock;
 import bee.bounty.registry.BountyBlockStateProviderTypes;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.random.WeightedList;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProviderType;
@@ -15,7 +14,7 @@ import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStatePr
 
 public class WeightedBountyFlowerStateProvider extends BlockStateProvider {
     private final WeightedList<BlockState> weightedList;
-    public static final MapCodec<WeightedBountyFlowerStateProvider> CODEC = WeightedList.nonEmptyCodec(BlockState.CODEC).fieldOf("state").xmap(WeightedBountyFlowerStateProvider::new, provider ->provider.weightedList);
+    public static final MapCodec<WeightedBountyFlowerStateProvider> CODEC = WeightedList.nonEmptyCodec(BlockState.CODEC).fieldOf("state").xmap(WeightedBountyFlowerStateProvider::new, provider -> provider.weightedList);
 
 
     public WeightedBountyFlowerStateProvider(WeightedList<BlockState> weightedList) {

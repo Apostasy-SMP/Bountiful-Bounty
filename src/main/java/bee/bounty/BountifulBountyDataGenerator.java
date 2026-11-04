@@ -9,22 +9,22 @@ import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
 
 public class BountifulBountyDataGenerator implements DataGeneratorEntrypoint {
-	@Override
-	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
-		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
+    @Override
+    public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
+        FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
 
-		pack.addProvider(BountyModelGen::new);
-		pack.addProvider(BountyLootGen::new);
-		pack.addProvider(BountyLangGen::new);
-		pack.addProvider(BountyWorldGen::new);
-		pack.addProvider(BountyRecipeGen::new);
-		pack.addProvider(BountyTagGen::new);
+        pack.addProvider(BountyModelGen::new);
+        pack.addProvider(BountyLootGen::new);
+        pack.addProvider(BountyLangGen::new);
+        pack.addProvider(BountyWorldGen::new);
+        pack.addProvider(BountyRecipeGen::new);
+        pack.addProvider(BountyTagGen::new);
 
-	}
+    }
 
-	@Override
-	public void buildRegistry(RegistrySetBuilder registryBuilder) {
-		registryBuilder.add(Registries.CONFIGURED_FEATURE, BountyConfiguredFeatures::configure);
-		registryBuilder.add(Registries.PLACED_FEATURE, BountyPlacedFeatures::configure);
-	}
+    @Override
+    public void buildRegistry(RegistrySetBuilder registryBuilder) {
+        registryBuilder.add(Registries.CONFIGURED_FEATURE, BountyConfiguredFeatures::configure);
+        registryBuilder.add(Registries.PLACED_FEATURE, BountyPlacedFeatures::configure);
+    }
 }

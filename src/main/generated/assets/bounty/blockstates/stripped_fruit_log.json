@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "bounty:block/stripped_fruit_log",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "bounty:block/stripped_fruit_log"
+    },
+    "axis=z": {
+      "model": "bounty:block/stripped_fruit_log",
+      "x": 90
+    }
+  }
+}

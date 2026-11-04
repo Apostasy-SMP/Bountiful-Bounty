@@ -1,13 +1,14 @@
 package bee.bounty.datagen;
 
 import bee.bounty.registry.BountyBlocks;
+import bee.bounty.registry.BountyItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.tags.ItemTags;
+import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -16,16 +17,19 @@ import net.minecraft.world.level.block.TallFlowerBlock;
 import java.util.concurrent.CompletableFuture;
 
 public class BountyRecipeGen extends FabricRecipeProvider {
+
+
     public BountyRecipeGen(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 
     @Override
-    protected RecipeProvider createRecipeProvider(HolderLookup.Provider provider, RecipeOutput recipeOutput) {
-        return new RecipeProvider(provider, recipeOutput) {
+    protected RecipeProvider createRecipeProvider(HolderLookup.Provider registries, RecipeOutput recipes) {
+        return new RecipeProvider(registries, recipes) {
             @Override
             public void buildRecipes() {
 
+                addFlowerDye(BountyBlocks.BLACK_SUNFLOWER, Items.BLACK_DYE);
                 addFlowerDye(BountyBlocks.TALL_WITHER_ROSE, Items.BLACK_DYE);
                 addFlowerDye(BountyBlocks.TALL_CYAN_ROSE, Items.CYAN_DYE);
                 addFlowerDye(BountyBlocks.TALL_PINK_ROSE, Items.PINK_DYE);
@@ -55,13 +59,79 @@ public class BountyRecipeGen extends FabricRecipeProvider {
                 addFlowerDye(BountyBlocks.DUSK_DANDELION, Items.BLUE_DYE);
 
 
+                this.generateRecipes(BountyBlocks.FRUIT_BLOCK_FAMILY, FeatureFlags.VANILLA_SET);
+
+                addCandyRecipe(BountyItems.GLOW_BERRY_CANDY, Items.GLOW_BERRIES);
+                addCandyRecipe(BountyItems.SWEET_BERRY_CANDY, Items.SWEET_BERRIES);
+                addCandyRecipe(BountyItems.APPLE_CANDY, Items.APPLE);
+                addCandyRecipe(BountyItems.GREEN_APPLE_CANDY, BountyItems.GREEN_APPLE);
+                addCandyRecipe(BountyItems.LIME_CANDY, BountyItems.LIME);
+                addCandyRecipe(BountyItems.LEMON_CANDY, BountyItems.LEMON);
+                addCandyRecipe(BountyItems.ORANGE_CANDY, BountyItems.ORANGE);
+                addCandyRecipe(BountyItems.CHERRY_CANDY, BountyItems.CHERRY);
+                addCandyRecipe(BountyItems.PEAR_CANDY, BountyItems.PEAR);
+
+                addPieRecipe(BountyItems.GLOW_BERRY_PIE, Items.GLOW_BERRIES);
+                addPieRecipe(BountyItems.SWEET_BERRY_PIE, Items.SWEET_BERRIES);
+                addPieRecipe(BountyItems.APPLE_PIE, Items.APPLE);
+                addPieRecipe(BountyItems.LIME_PIE, BountyItems.LIME);
+                addPieRecipe(BountyItems.LEMON_PIE, BountyItems.LEMON);
+                addPieRecipe(BountyItems.CHERRY_PIE, BountyItems.CHERRY);
+
+                shapeless(RecipeCategory.FOOD, BountyItems.CHOCOLATE_BAR, 3)
+                        .requires(Items.COCOA_BEANS, 2)
+                        .requires(Items.SUGAR)
+                        .requires(Items.PAPER)
+                        .unlockedBy(getHasName(Items.COCOA_BEANS), has(Items.COCOA_BEANS))
+                        .save(output);
+
+                shapeless(RecipeCategory.FOOD, BountyItems.CANDY_CORN, 16)
+                        .requires(Items.SUGAR, 2)
+                        .requires(Items.WHITE_DYE)
+                        .requires(Items.ORANGE_DYE)
+                        .requires(Items.YELLOW_DYE)
+                        .unlockedBy(getHasName(Items.SUGAR), has(Items.SUGAR))
+                        .save(output);
+
+                shapeless(RecipeCategory.FOOD, BountyItems.LEMON_COOKIE, 8)
+                        .requires(Items.WHEAT, 2)
+                        .requires(Items.SUGAR)
+                        .requires(BountyItems.LEMON)
+                        .unlockedBy(getHasName(BountyItems.LEMON), has(BountyItems.LEMON))
+                        .save(output);
+
+                shapeless(RecipeCategory.FOOD, BountyItems.CHERRY_CHOCOLATE_COOKIE, 8)
+                        .requires(Items.WHEAT, 1)
+                        .requires(BountyItems.CHOCOLATE_BAR)
+                        .requires(BountyItems.CHERRY)
+                        .unlockedBy(getHasName(BountyItems.CHERRY), has(BountyItems.CHERRY))
+                        .save(output);
+            }
+
+            public void addPieRecipe(Item result, Item fruit) {
+                shapeless(RecipeCategory.FOOD, result)
+                        .requires(Items.SUGAR)
+                        .requires(Items.EGG)
+                        .requires(fruit)
+                        .unlockedBy(getHasName(fruit), has(fruit))
+                        .save(output);
+            }
+
+            public void addCandyRecipe(Item result, Item fruit) {
+                shapeless(RecipeCategory.FOOD, result, 8)
+                        .requires(fruit)
+                        .requires(Items.PAPER)
+                        .requires(Items.SUGAR)
+                        .requires(Items.HONEYCOMB)
+                        .unlockedBy(getHasName(fruit), has(fruit))
+                        .save(output);
             }
 
             public void addFlowerDye(Block block, Item item) {
                 int amount = block instanceof TallFlowerBlock ? 2 : 1;
-                shapeless(RecipeCategory.MISC, item.getDefaultInstance().copyWithCount(amount))
+                shapeless(RecipeCategory.MISC, item, amount)
                         .requires(block)
-                        .unlockedBy(getHasName(item), has(ItemTags.FLOWERS))
+                        .unlockedBy(getHasName(item), has(block))
                         .save(output, getItemName(item) + "_from_" + getItemName(block));
             }
         };

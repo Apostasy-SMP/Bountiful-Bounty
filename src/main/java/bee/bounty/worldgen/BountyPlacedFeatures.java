@@ -26,7 +26,7 @@ public class BountyPlacedFeatures {
     public static final ResourceKey<PlacedFeature> OVERWORLD_BOUNTY = createKey("overworld_bounty");
     public static final ResourceKey<PlacedFeature> BLUE_ANEMONE = createKey("blue_anemone");
     public static final ResourceKey<PlacedFeature> DUSK_POTENTILLA = createKey("dusk_potentilla");
-    
+
     public static void configure(BootstrapContext<PlacedFeature> context) {
 
         HolderGetter<ConfiguredFeature<?, ?>> holderGetter = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -41,7 +41,6 @@ public class BountyPlacedFeatures {
         Holder<ConfiguredFeature<?, ?>> configuredBlueAnemone = holderGetter.getOrThrow(BountyConfiguredFeatures.BLUE_ANEMONE);
         Holder<ConfiguredFeature<?, ?>> configuredDuskPotentilla = holderGetter.getOrThrow(BountyConfiguredFeatures.DUSK_POTENTILLA);
         Holder<ConfiguredFeature<?, ?>> configuredPinwheel = holderGetter.getOrThrow(BountyConfiguredFeatures.PINWHEEL_DAISY);
-
 
 
         PlacementUtils.register(context, RED_ROSES, configuredRedRoses, RarityFilter.onAverageOnceEvery(24), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());

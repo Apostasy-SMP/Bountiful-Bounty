@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "bounty:block/fruit_slab"
+    },
+    "type=double": {
+      "model": "bounty:block/fruit_planks"
+    },
+    "type=top": {
+      "model": "bounty:block/fruit_slab_top"
+    }
+  }
+}

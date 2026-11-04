@@ -1,8 +1,7 @@
 package bee.bounty.worldgen;
 
-import bee.bounty.block.BountifulFlowerBlock;
+import bee.bounty.block.flower.BountifulFlowerBlock;
 import bee.bounty.registry.BountyBlockStateProviderTypes;
-import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
@@ -10,11 +9,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProviderType;
-import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 
 public class BountyFlowerStateProvider extends BlockStateProvider {
     private final BlockState state;
-    public static final MapCodec<BountyFlowerStateProvider> CODEC = BlockState.CODEC.fieldOf("state").xmap(BountyFlowerStateProvider::new, provider ->provider.state);
+    public static final MapCodec<BountyFlowerStateProvider> CODEC = BlockState.CODEC.fieldOf("state").xmap(BountyFlowerStateProvider::new, provider -> provider.state);
 
     public BountyFlowerStateProvider(Block block) {
         this.state = block.defaultBlockState();

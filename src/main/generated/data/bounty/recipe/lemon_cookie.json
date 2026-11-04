@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:wheat",
+    "minecraft:wheat",
+    "minecraft:sugar",
+    "bounty:lemon"
+  ],
+  "result": {
+    "count": 8,
+    "id": "bounty:lemon_cookie"
+  }
+}

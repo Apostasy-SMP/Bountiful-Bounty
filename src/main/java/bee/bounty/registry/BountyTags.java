@@ -7,7 +7,8 @@ import net.minecraft.world.level.biome.Biome;
 
 public class BountyTags {
 
-    public static void init() {}
+    public static void init() {
+    }
 
     public static final TagKey<Biome> CYAN_ROSES = registerBiomeTag("cyan_roses");
     public static final TagKey<Biome> RED_ROSES = registerBiomeTag("red_roses");

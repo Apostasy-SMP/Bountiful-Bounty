@@ -2,10 +2,10 @@ package bee.bounty.datagen;
 
 import bee.bounty.registry.BountyBlockProperties;
 import bee.bounty.registry.BountyBlocks;
+import bee.bounty.registry.BountyItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.advancements.criterion.StatePropertiesPredicate;
-import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -20,8 +20,8 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import java.util.concurrent.CompletableFuture;
 
 public class BountyLootGen extends FabricBlockLootTableProvider {
-    public BountyLootGen(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
-        super(dataOutput, registryLookup);
+    public BountyLootGen(FabricDataOutput packOutput, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+        super(packOutput, registriesFuture);
     }
 
     @Override
@@ -70,8 +70,50 @@ public class BountyLootGen extends FabricBlockLootTableProvider {
         this.add(BountyBlocks.TALL_WITHER_ROSE, block -> this.createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         this.add(BountyBlocks.BLACK_SUNFLOWER, block -> this.createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
 
+        dropSelf(BountyBlocks.FRUIT_LOG);
+        dropSelf(BountyBlocks.STRIPPED_FRUIT_LOG);
+        dropSelf(BountyBlocks.FRUIT_WOOD);
+        dropSelf(BountyBlocks.STRIPPED_FRUIT_WOOD);
+        dropSelf(BountyBlocks.FRUIT_PLANKS);
+        dropSelf(BountyBlocks.FRUIT_STAIRS);
+        dropSelf(BountyBlocks.FRUIT_SLAB);
+        dropSelf(BountyBlocks.FRUIT_FENCE);
+        dropSelf(BountyBlocks.FRUIT_FENCE_GATE);
+        dropSelf(BountyBlocks.FRUIT_PRESSURE_PLATE);
+        dropSelf(BountyBlocks.FRUIT_BUTTON);
+        dropSelf(BountyBlocks.FRUIT_TRAPDOOR);
+        dropSelf(BountyBlocks.FRUIT_SHELF);
+        dropOther(BountyBlocks.FRUIT_HANGING_SIGN, BountyBlocks.FRUIT_HANGING_SIGN);
+        dropOther(BountyBlocks.FRUIT_SIGN, BountyBlocks.FRUIT_SIGN);
+        dropOther(BountyBlocks.FRUIT_WALL_HANGING_SIGN, BountyBlocks.FRUIT_HANGING_SIGN);
+        dropOther(BountyBlocks.FRUIT_WALL_SIGN, BountyBlocks.FRUIT_SIGN);
+        add(BountyBlocks.FRUIT_DOOR, createDoorTable(BountyBlocks.FRUIT_DOOR));
 
+        createOakLeavesDrops(BountyBlocks.APPLE_LEAVES, BountyBlocks.APPLE_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
+        createOakLeavesDrops(BountyBlocks.GREEN_APPLE_LEAVES, BountyBlocks.GREEN_APPLE_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
+        createOakLeavesDrops(BountyBlocks.LIME_LEAVES, BountyBlocks.LIME_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
+        createOakLeavesDrops(BountyBlocks.LEMON_LEAVES, BountyBlocks.LEMON_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
+        createOakLeavesDrops(BountyBlocks.ORANGE_LEAVES, BountyBlocks.APPLE_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
+        createOakLeavesDrops(BountyBlocks.WHITE_CHERRY_LEAVES, BountyBlocks.GREEN_APPLE_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
+        createOakLeavesDrops(BountyBlocks.PEAR_LEAVES, BountyBlocks.LIME_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
+
+        dropSelf(BountyBlocks.APPLE_SAPLING);
+        dropSelf(BountyBlocks.GREEN_APPLE_SAPLING);
+        dropSelf(BountyBlocks.LIME_SAPLING);
+        dropSelf(BountyBlocks.LEMON_SAPLING);
+        dropSelf(BountyBlocks.ORANGE_SAPLING);
+        dropSelf(BountyBlocks.WHITE_CHERRY_SAPLING);
+        dropSelf(BountyBlocks.PEAR_SAPLING);
+
+        dropPottedContents(BountyBlocks.POTTED_APPLE_SAPLING);
+        dropPottedContents(BountyBlocks.POTTED_GREEN_APPLE_SAPLING);
+        dropPottedContents(BountyBlocks.POTTED_LIME_SAPLING);
+        dropPottedContents(BountyBlocks.POTTED_LEMON_SAPLING);
+        dropPottedContents(BountyBlocks.POTTED_ORANGE_SAPLING);
+        dropPottedContents(BountyBlocks.POTTED_WHITE_CHERRY_SAPLING);
+        dropPottedContents(BountyBlocks.POTTED_PEAR_SAPLING);
     }
+
 
     public void createFlowerDrop(Block block) {
         add(block, createFlowerDropBuilder(block));

@@ -18,7 +18,8 @@ public class BountyBlockStateProviderTypes {
         return Registry.register(BuiltInRegistries.BLOCKSTATE_PROVIDER_TYPE, BountifulBounty.id(string), new BlockStateProviderType<P>(mapCodec));
     }
 
-    public static void init() {}
+    public static void init() {
+    }
 
 
 }

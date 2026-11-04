@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:sugar",
+    "minecraft:sugar",
+    "minecraft:white_dye",
+    "minecraft:orange_dye",
+    "minecraft:yellow_dye"
+  ],
+  "result": {
+    "count": 16,
+    "id": "bounty:candy_corn"
+  }
+}

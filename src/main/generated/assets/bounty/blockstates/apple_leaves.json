@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "growth=0": {
+      "model": "bounty:block/apple_leaves"
+    },
+    "growth=1": {
+      "model": "bounty:block/apple_leaves_growing"
+    },
+    "growth=2": {
+      "model": "bounty:block/apple_leaves_unripe"
+    },
+    "growth=3": {
+      "model": "bounty:block/apple_leaves_ripe"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "bounty:block/stripped_fruit_log",
+    "side": "bounty:block/stripped_fruit_log"
+  }
+}

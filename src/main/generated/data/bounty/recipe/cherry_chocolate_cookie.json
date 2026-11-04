@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:wheat",
+    "bounty:chocolate_bar",
+    "bounty:cherry"
+  ],
+  "result": {
+    "count": 8,
+    "id": "bounty:cherry_chocolate_cookie"
+  }
+}

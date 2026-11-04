@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "bounty:block/green_apple_leaves_unripe"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:sugar",
+    "minecraft:egg",
+    "bounty:lemon"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bounty:lemon_pie"
+  }
+}
