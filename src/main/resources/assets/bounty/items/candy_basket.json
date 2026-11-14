@@ -1,0 +1,30 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "minecraft:component",
+    "predicate": "bounty:candy_basket_contents_filled_level",
+    "value": {
+      "level": 1
+    },
+    "on_true": {
+      "type": "minecraft:model",
+      "model": "bounty:item/candy_basket_empty"
+    },
+    "on_false": {
+      "type": "minecraft:condition",
+      "property": "minecraft:component",
+      "predicate": "bounty:candy_basket_contents_filled_level",
+      "value": {
+        "level": 2
+      },
+      "on_true": {
+        "type": "minecraft:model",
+        "model": "bounty:item/candy_basket_slightly_full"
+      },
+      "on_false": {
+        "type": "minecraft:model",
+        "model": "bounty:item/candy_basket_full"
+      }
+    }
+  }
+}

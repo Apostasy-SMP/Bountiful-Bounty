@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bounty:yellow_dye_from_halo_flower"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_yellow_dye": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bounty:halo_flower"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_yellow_dye"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bounty:yellow_dye_from_halo_flower"
+    ]
+  }
+}

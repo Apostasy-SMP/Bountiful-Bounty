@@ -1,6 +1,33 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "bounty:block/lemon_leaves"
+    "type": "minecraft:range_dispatch",
+    "entries": [
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "bounty:block/lemon_leaves_growing"
+        },
+        "threshold": 1.0
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "bounty:block/lemon_leaves_unripe"
+        },
+        "threshold": 2.0
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "bounty:block/lemon_leaves_ripe"
+        },
+        "threshold": 3.0
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "bounty:block/lemon_leaves"
+    },
+    "property": "bounty:growth"
   }
 }

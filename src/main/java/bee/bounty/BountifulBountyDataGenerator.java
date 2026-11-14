@@ -19,6 +19,7 @@ public class BountifulBountyDataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(BountyWorldGen::new);
         pack.addProvider(BountyRecipeGen::new);
         pack.addProvider(BountyTagGen::new);
+        pack.addProvider(BountyItemTagGen::new);
 
     }
 

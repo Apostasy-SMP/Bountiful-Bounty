@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "bounty:pear",
+    "minecraft:paper",
+    "minecraft:sugar",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "count": 8,
+    "id": "bounty:blue_berry_candy"
+  }
+}

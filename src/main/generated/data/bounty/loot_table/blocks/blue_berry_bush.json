@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "bounty:blue_berry_bush",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "2"
+          }
+        },
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "block": "bounty:blue_berry_bush",
+          "condition": "minecraft:block_state_property",
+          "properties": {
+            "age": "3"
+          }
+        },
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [],
+      "rolls": 2.0
+    }
+  ]
+}

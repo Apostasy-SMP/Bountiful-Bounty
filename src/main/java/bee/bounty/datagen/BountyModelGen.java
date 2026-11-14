@@ -2,6 +2,7 @@ package bee.bounty.datagen;
 
 import bee.bounty.BountifulBounty;
 import bee.bounty.block.FruitLeavesBlock;
+import bee.bounty.item.GrowthProperty;
 import bee.bounty.registry.BountyBlockProperties;
 import bee.bounty.registry.BountyBlocks;
 import bee.bounty.registry.BountyItems;
@@ -12,14 +13,17 @@ import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.MultiVariant;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.blockstates.PropertyDispatch;
-import net.minecraft.client.data.models.model.ModelLocationUtils;
-import net.minecraft.client.data.models.model.ModelTemplates;
-import net.minecraft.client.data.models.model.TextureMapping;
-import net.minecraft.client.data.models.model.TexturedModel;
+import net.minecraft.client.data.models.model.*;
+import net.minecraft.client.renderer.item.ItemModel;
+import net.minecraft.client.renderer.item.RangeSelectItemModel;
+import net.minecraft.client.renderer.item.properties.numeric.Damage;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import static net.minecraft.client.data.models.BlockModelGenerators.createSimpleBlock;
 import static net.minecraft.client.data.models.BlockModelGenerators.plainVariant;
@@ -72,6 +76,22 @@ public class BountyModelGen extends FabricModelProvider {
         createFlowerBlock(BountyBlocks.DUSK_BLUET, BountyBlocks.POTTED_DUSK_BLUET, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
         createFlowerBlock(BountyBlocks.DUSK_DAISY, BountyBlocks.POTTED_DUSK_DAISY, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
 
+        createFlowerBlock(BountyBlocks.HALO_FLOWER, BountyBlocks.POTTED_HALO_FLOWER, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.ANGEL_BLOSSOM, BountyBlocks.POTTED_ANGEL_BLOSSOM, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.FARLOW_LILY, BountyBlocks.POTTED_FARLOW_LILY, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.WHITE_CARNATION, BountyBlocks.POTTED_WHITE_CARNATION, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.RED_CARNATION, BountyBlocks.POTTED_RED_CARNATION, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.BLUE_CARNATION, BountyBlocks.POTTED_BLUE_CARNATION, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.YELLOW_CARNATION, BountyBlocks.POTTED_YELLOW_CARNATION, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.FOXGLOVE, BountyBlocks.POTTED_FOXGLOVE, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.GLACIAL_FOXGLOVE, BountyBlocks.POTTED_GLACIAL_FOXGLOVE, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+
+        createFlowerBlock(BountyBlocks.FLAME_LILY, BountyBlocks.POTTED_FLAME_LILY, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.VOID_LILY, BountyBlocks.POTTED_VOID_LILY, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.ZAP_LILY, BountyBlocks.POTTED_ZAP_LILY, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+        createFlowerBlock(BountyBlocks.FROST_LILY, BountyBlocks.POTTED_FROST_LILY, blockModelGenerators, BlockModelGenerators.PlantType.NOT_TINTED);
+
+
 
         blockModelGenerators.createDoublePlantWithDefaultItem(BountyBlocks.TALL_PINK_ROSE, BlockModelGenerators.PlantType.NOT_TINTED);
         blockModelGenerators.createDoublePlantWithDefaultItem(BountyBlocks.TALL_CYAN_ROSE, BlockModelGenerators.PlantType.NOT_TINTED);
@@ -84,7 +104,7 @@ public class BountyModelGen extends FabricModelProvider {
         blockModelGenerators.woodProvider(BountyBlocks.FRUIT_LOG).log(BountyBlocks.FRUIT_LOG).wood(BountyBlocks.FRUIT_WOOD);
         blockModelGenerators.woodProvider(BountyBlocks.STRIPPED_FRUIT_LOG).log(BountyBlocks.STRIPPED_FRUIT_LOG).wood(BountyBlocks.STRIPPED_FRUIT_WOOD);
         blockModelGenerators.createShelf(BountyBlocks.FRUIT_SHELF, BountyBlocks.STRIPPED_FRUIT_LOG);
-        blockModelGenerators.createHangingSign(BountyBlocks.STRIPPED_FRUIT_WOOD, BountyBlocks.FRUIT_HANGING_SIGN, BountyBlocks.FRUIT_WALL_HANGING_SIGN);
+        blockModelGenerators.createHangingSign(BountyBlocks.STRIPPED_FRUIT_LOG, BountyBlocks.FRUIT_HANGING_SIGN, BountyBlocks.FRUIT_WALL_HANGING_SIGN);
 
         createLeaves(blockModelGenerators, BountyBlocks.APPLE_LEAVES);
         blockModelGenerators.createPlantWithDefaultItem(BountyBlocks.APPLE_SAPLING, BountyBlocks.POTTED_APPLE_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
@@ -100,6 +120,24 @@ public class BountyModelGen extends FabricModelProvider {
         blockModelGenerators.createPlantWithDefaultItem(BountyBlocks.WHITE_CHERRY_SAPLING, BountyBlocks.POTTED_WHITE_CHERRY_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
         createLeaves(blockModelGenerators, BountyBlocks.PEAR_LEAVES);
         blockModelGenerators.createPlantWithDefaultItem(BountyBlocks.PEAR_SAPLING, BountyBlocks.POTTED_PEAR_SAPLING, BlockModelGenerators.PlantType.NOT_TINTED);
+
+        createSweetBerryBush(blockModelGenerators, BountyBlocks.BLUE_BERRY_BUSH, BountyItems.BLUE_BERRIES);
+
+        blockModelGenerators.createFlowerBed(BountyBlocks.SCARLET_WILDFLOWERS);
+        blockModelGenerators.createFlowerBed(BountyBlocks.MIDNIGHT_WILDFLOWERS);
+        blockModelGenerators.createFlowerBed(BountyBlocks.FROSTY_WILDFLOWERS);
+        blockModelGenerators.createFlowerBed(BountyBlocks.ENCHANTED_WILDFLOWERS);
+        blockModelGenerators.createFlowerBed(BountyBlocks.DUSK_WILDFLOWERS);
+
+
+
+    }
+
+    private void createSweetBerryBush(BlockModelGenerators blockModelGenerators, Block block, Item item) {
+        blockModelGenerators.registerSimpleFlatItemModel(item);
+        blockModelGenerators.blockStateOutput.accept(MultiVariantGenerator.dispatch(block)
+                .with(PropertyDispatch.initial(BlockStateProperties.AGE_3)
+                        .generate((integer) -> plainVariant(blockModelGenerators.createSuffixedVariant(block, "_stage" + integer, ModelTemplates.CROSS, TextureMapping::cross)))));
     }
 
     @Override
@@ -120,6 +158,7 @@ public class BountyModelGen extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(BountyItems.LIME_PIE, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(BountyItems.LEMON_PIE, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(BountyItems.CHERRY_PIE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(BountyItems.BLUE_BERRY_PIE, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerators.generateFlatItem(BountyItems.GLOW_BERRY_CANDY, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(BountyItems.SWEET_BERRY_CANDY, ModelTemplates.FLAT_ITEM);
@@ -130,14 +169,22 @@ public class BountyModelGen extends FabricModelProvider {
         itemModelGenerators.generateFlatItem(BountyItems.ORANGE_CANDY, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(BountyItems.PEAR_CANDY, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(BountyItems.CHERRY_CANDY, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(BountyItems.BLUE_BERRY_CANDY, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(BountyItems.CANDY_CORN, ModelTemplates.FLAT_ITEM);
 
         itemModelGenerators.generateFlatItem(BountyItems.CHERRY_CHOCOLATE_COOKIE, ModelTemplates.FLAT_ITEM);
         itemModelGenerators.generateFlatItem(BountyItems.LEMON_COOKIE, ModelTemplates.FLAT_ITEM);
+        itemModelGenerators.generateFlatItem(BountyItems.BLUE_BERRY_COOKIE, ModelTemplates.FLAT_ITEM);
 
     }
 
+
     private void createLeaves(BlockModelGenerators generators, Block block) {
+        ItemModel.Unbaked unbaked = ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(block));
+        ItemModel.Unbaked unbaked2 = ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(block, "_growing"));
+        ItemModel.Unbaked unbaked3 = ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(block, "_unripe"));
+        ItemModel.Unbaked unbaked4 = ItemModelUtils.plainModel(ModelLocationUtils.getModelLocation(block, "_ripe"));
+        generators.itemModelOutput.accept(block.asItem(), ItemModelUtils.rangeSelect(new GrowthProperty(), unbaked, new RangeSelectItemModel.Entry(1, unbaked2), new RangeSelectItemModel.Entry(2, unbaked3), new RangeSelectItemModel.Entry(3, unbaked4)));
         MultiVariant unmatured = plainVariant(TexturedModel.LEAVES.create(block, generators.modelOutput));
         MultiVariant growing = plainVariant(generators.createSuffixedVariant(block, "_growing", ModelTemplates.LEAVES, TextureMapping::cube));
         MultiVariant unripe = plainVariant(generators.createSuffixedVariant(block, "_unripe", ModelTemplates.LEAVES, TextureMapping::cube));
@@ -150,6 +197,8 @@ public class BountyModelGen extends FabricModelProvider {
                         .select(2, unripe)
                         .select(3, ripe))
         );
+
+
 
     }
 

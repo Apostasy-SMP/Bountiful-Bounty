@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "f": "#bounty:fruit",
+    "s": "minecraft:sugar",
+    "t": "minecraft:stick"
+  },
+  "pattern": [
+    " s ",
+    " fs",
+    "t  "
+  ],
+  "result": {
+    "count": 1,
+    "id": "bounty:lollipop"
+  }
+}

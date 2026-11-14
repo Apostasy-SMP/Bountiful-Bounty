@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    "#bounty:fruit_logs"
+  ],
+  "result": {
+    "count": 4,
+    "id": "bounty:fruit_planks"
+  }
+}

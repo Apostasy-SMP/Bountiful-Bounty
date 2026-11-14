@@ -1,6 +1,6 @@
 package bee.bounty.registry;
 
-import bee.bounty.worldgen.WeightedBountyFlowerStateProvider;
+import bee.bounty.worldgen.placer.WeightedBountyFlowerStateProvider;
 import bee.creature.registry.BlockStateProviderOverrides;
 import net.minecraft.util.random.WeightedList;
 import net.minecraft.world.level.block.Block;

@@ -4,6 +4,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BlocksMixin",
+    "ConsumableMixin",
+    "ItemEntityMixin",
     "LivingEntityMixin"
   ],
   "injectors": {

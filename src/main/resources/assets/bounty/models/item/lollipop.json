@@ -1,0 +1,6 @@
+{
+  "parent": "bounty:item/handheld_large",
+  "textures": {
+    "layer0": "bounty:item/lollipop"
+  }
+}

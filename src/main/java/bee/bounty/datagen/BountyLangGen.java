@@ -17,6 +17,27 @@ public class BountyLangGen extends FabricLanguageProvider {
 
     @Override
     public void generateTranslations(HolderLookup.Provider provider, TranslationBuilder translationBuilder) {
+        translationBuilder.add(BountyBlocks.HALO_FLOWER, "Halo Flower");
+        translationBuilder.add(BountyBlocks.ANGEL_BLOSSOM, "Angel Blossom");
+        translationBuilder.add(BountyBlocks.FARLOW_LILY, "Farlow Lily");
+        translationBuilder.add(BountyBlocks.WHITE_CARNATION, "White Carnation");
+        translationBuilder.add(BountyBlocks.RED_CARNATION, "Red Carnation");
+        translationBuilder.add(BountyBlocks.BLUE_CARNATION, "Blue Carnation");
+        translationBuilder.add(BountyBlocks.YELLOW_CARNATION, "Yellow Carnation");
+        translationBuilder.add(BountyBlocks.FOXGLOVE, "Foxglove");
+        translationBuilder.add(BountyBlocks.GLACIAL_FOXGLOVE, "Glacial Foxglove");
+
+        translationBuilder.add(BountyBlocks.FLAME_LILY, "Flame Lily");
+        translationBuilder.add(BountyBlocks.VOID_LILY, "Void Lily");
+        translationBuilder.add(BountyBlocks.ZAP_LILY, "Zap Lily");
+        translationBuilder.add(BountyBlocks.FROST_LILY, "Frost Lily");
+
+        translationBuilder.add(BountyBlocks.SCARLET_WILDFLOWERS, "Scarlet Wildflowers");
+        translationBuilder.add(BountyBlocks.MIDNIGHT_WILDFLOWERS, "Midnight Wildflowers");
+        translationBuilder.add(BountyBlocks.FROSTY_WILDFLOWERS, "Frosty Wildflowers");
+        translationBuilder.add(BountyBlocks.ENCHANTED_WILDFLOWERS, "Enchanted Wildflowers");
+        translationBuilder.add(BountyBlocks.DUSK_WILDFLOWERS, "Dusk Wildflowers");
+
         translationBuilder.add(BountyBlocks.CYAN_ROSE, "Cyan Rose");
         translationBuilder.add(BountyBlocks.RED_ROSE, "Red Rose");
         translationBuilder.add(BountyBlocks.PINK_ROSE, "Pink Rose");
@@ -113,6 +134,18 @@ public class BountyLangGen extends FabricLanguageProvider {
 
         translationBuilder.add(BountyItems.CHERRY_CHOCOLATE_COOKIE, "Cherry Chocolate Cookie");
         translationBuilder.add(BountyItems.LEMON_COOKIE, "Lemon Cookie");
+
+        translationBuilder.add(BountyItems.BLUE_BERRIES, "Blue Berries");
+        translationBuilder.add(BountyItems.BLUE_BERRY_PIE, "Blue Berry Pie");
+        translationBuilder.add(BountyItems.BLUE_BERRY_CANDY, "Blue Berry Candy");
+        translationBuilder.add(BountyItems.BLUE_BERRY_COOKIE, "Blue Berry Cookie");
+
+        translationBuilder.add(BountyItems.CANDY_BASKET, "Candy Basket");
+        translationBuilder.add(BountyItems.LOLLIPOP, "Lollipop");
+
+        translationBuilder.add("growth_stage.flowering", "Flowering ");
+        translationBuilder.add("growth_stage.unripe", "Unripe ");
+        translationBuilder.add("growth_stage.ripe", "Ripe ");
 
     }
 

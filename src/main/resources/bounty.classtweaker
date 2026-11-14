@@ -1,0 +1,2 @@
+classTweaker v2 named
+inject-interface    net/minecraft/world/entity/item/ItemEntity    bee/bounty/injection/ThrowableInterface

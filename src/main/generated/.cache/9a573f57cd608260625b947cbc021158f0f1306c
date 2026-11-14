@@ -1,5 +1,7 @@
 // 1.21.11	-999999999-01-01T00:00:00	Bountiful Bounty/Tags for minecraft:block
 ae9bb887f51a080045857fd43ae720081f691e0e data/minecraft/tags/block/flowers.json
+d8d401361bc0b922d4069db9e50b9837570937fc data/minecraft/tags/block/leaves.json
 97417b1e56a0a85b0687d957ab221ef1d4f00ddc data/minecraft/tags/block/logs.json
+d8d401361bc0b922d4069db9e50b9837570937fc data/minecraft/tags/block/mineable/hoe.json
 97417b1e56a0a85b0687d957ab221ef1d4f00ddc data/minecraft/tags/block/overworld_natural_logs.json
-245b4df0e5aa5a49af226c68b9febaf36c6e8aa8 data/minecraft/tags/block/small_flowers.json
+83692678b723d4f70adef6bc7f33f227307acbfc data/minecraft/tags/block/small_flowers.json

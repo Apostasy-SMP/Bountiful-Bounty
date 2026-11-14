@@ -1,19 +1,28 @@
 package bee.bounty.datagen;
 
+import bee.bounty.block.FruitLeavesBlock;
 import bee.bounty.registry.BountyBlockProperties;
 import bee.bounty.registry.BountyBlocks;
 import bee.bounty.registry.BountyItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.advancements.criterion.StatePropertiesPredicate;
+import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.CopyBlockState;
+import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
+import net.minecraft.world.level.storage.loot.functions.SetComponentsFunction;
+import net.minecraft.world.level.storage.loot.functions.SetNameFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 
@@ -65,6 +74,22 @@ public class BountyLootGen extends FabricBlockLootTableProvider {
         createFlowerDrop(BountyBlocks.DUSK_BLUET, BountyBlocks.POTTED_DUSK_BLUET);
         createFlowerDrop(BountyBlocks.DUSK_DAISY, BountyBlocks.POTTED_DUSK_DAISY);
 
+        createFlowerDrop(BountyBlocks.HALO_FLOWER, BountyBlocks.POTTED_HALO_FLOWER);
+        createFlowerDrop(BountyBlocks.ANGEL_BLOSSOM, BountyBlocks.POTTED_ANGEL_BLOSSOM);
+        createFlowerDrop(BountyBlocks.FARLOW_LILY, BountyBlocks.POTTED_FARLOW_LILY);
+        createFlowerDrop(BountyBlocks.WHITE_CARNATION, BountyBlocks.POTTED_WHITE_CARNATION);
+        createFlowerDrop(BountyBlocks.RED_CARNATION, BountyBlocks.POTTED_RED_CARNATION);
+        createFlowerDrop(BountyBlocks.BLUE_CARNATION, BountyBlocks.POTTED_BLUE_CARNATION);
+        createFlowerDrop(BountyBlocks.YELLOW_CARNATION, BountyBlocks.POTTED_YELLOW_CARNATION);
+        createFlowerDrop(BountyBlocks.FOXGLOVE, BountyBlocks.POTTED_FOXGLOVE);
+        createFlowerDrop(BountyBlocks.GLACIAL_FOXGLOVE, BountyBlocks.POTTED_GLACIAL_FOXGLOVE);
+        
+        createFlowerDrop(BountyBlocks.FLAME_LILY, BountyBlocks.POTTED_FLAME_LILY);
+        createFlowerDrop(BountyBlocks.VOID_LILY, BountyBlocks.POTTED_VOID_LILY);
+        createFlowerDrop(BountyBlocks.ZAP_LILY, BountyBlocks.POTTED_ZAP_LILY);
+        createFlowerDrop(BountyBlocks.FROST_LILY, BountyBlocks.POTTED_FROST_LILY);
+
+
         this.add(BountyBlocks.TALL_CYAN_ROSE, block -> this.createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         this.add(BountyBlocks.TALL_PINK_ROSE, block -> this.createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         this.add(BountyBlocks.TALL_WITHER_ROSE, block -> this.createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
@@ -89,13 +114,13 @@ public class BountyLootGen extends FabricBlockLootTableProvider {
         dropOther(BountyBlocks.FRUIT_WALL_SIGN, BountyBlocks.FRUIT_SIGN);
         add(BountyBlocks.FRUIT_DOOR, createDoorTable(BountyBlocks.FRUIT_DOOR));
 
-        createOakLeavesDrops(BountyBlocks.APPLE_LEAVES, BountyBlocks.APPLE_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
-        createOakLeavesDrops(BountyBlocks.GREEN_APPLE_LEAVES, BountyBlocks.GREEN_APPLE_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
-        createOakLeavesDrops(BountyBlocks.LIME_LEAVES, BountyBlocks.LIME_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
-        createOakLeavesDrops(BountyBlocks.LEMON_LEAVES, BountyBlocks.LEMON_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
-        createOakLeavesDrops(BountyBlocks.ORANGE_LEAVES, BountyBlocks.APPLE_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
-        createOakLeavesDrops(BountyBlocks.WHITE_CHERRY_LEAVES, BountyBlocks.GREEN_APPLE_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
-        createOakLeavesDrops(BountyBlocks.PEAR_LEAVES, BountyBlocks.LIME_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
+        createFruitLeavesDrop(BountyBlocks.APPLE_LEAVES, BountyBlocks.APPLE_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
+        createFruitLeavesDrop(BountyBlocks.GREEN_APPLE_LEAVES, BountyBlocks.GREEN_APPLE_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
+        createFruitLeavesDrop(BountyBlocks.LIME_LEAVES, BountyBlocks.LIME_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
+        createFruitLeavesDrop(BountyBlocks.LEMON_LEAVES, BountyBlocks.LEMON_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
+        createFruitLeavesDrop(BountyBlocks.ORANGE_LEAVES, BountyBlocks.APPLE_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
+        createFruitLeavesDrop(BountyBlocks.WHITE_CHERRY_LEAVES, BountyBlocks.GREEN_APPLE_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
+        createFruitLeavesDrop(BountyBlocks.PEAR_LEAVES, BountyBlocks.LIME_SAPLING, NORMAL_LEAVES_SAPLING_CHANCES);
 
         dropSelf(BountyBlocks.APPLE_SAPLING);
         dropSelf(BountyBlocks.GREEN_APPLE_SAPLING);
@@ -112,6 +137,31 @@ public class BountyLootGen extends FabricBlockLootTableProvider {
         dropPottedContents(BountyBlocks.POTTED_ORANGE_SAPLING);
         dropPottedContents(BountyBlocks.POTTED_WHITE_CHERRY_SAPLING);
         dropPottedContents(BountyBlocks.POTTED_PEAR_SAPLING);
+        dropPottedContents(BountyBlocks.POTTED_BLUE_BERRY_BUSH);
+        createBushDrop(BountyBlocks.BLUE_BERRY_BUSH, BountyItems.BLUE_BERRIES);
+
+        this.add(BountyBlocks.SCARLET_WILDFLOWERS, this.createSegmentedBlockDrops(BountyBlocks.SCARLET_WILDFLOWERS));
+        this.add(BountyBlocks.MIDNIGHT_WILDFLOWERS, this.createSegmentedBlockDrops(BountyBlocks.MIDNIGHT_WILDFLOWERS));
+        this.add(BountyBlocks.FROSTY_WILDFLOWERS, this.createSegmentedBlockDrops(BountyBlocks.FROSTY_WILDFLOWERS));
+        this.add(BountyBlocks.ENCHANTED_WILDFLOWERS, this.createSegmentedBlockDrops(BountyBlocks.ENCHANTED_WILDFLOWERS));
+        this.add(BountyBlocks.DUSK_WILDFLOWERS, this.createSegmentedBlockDrops(BountyBlocks.DUSK_WILDFLOWERS));
+    }
+
+    public void createFruitLeavesDrop(Block block, Block sapling, float[] chance) {
+        add(block, this.createLeavesDrops(block, sapling, chance)
+                .apply(CopyBlockState.copyState(block).copy(FruitLeavesBlock.GROWTH)));
+    }
+
+    public void createBushDrop(Block block, Item item) {
+        add(block, LootTable.lootTable()
+                .withPool(this.applyExplosionCondition(item, LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BlockStateProperties.AGE_3, 2)))))
+                .withPool(this.applyExplosionCondition(item, LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(2))
+                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BlockStateProperties.AGE_3, 3))))));
     }
 
 

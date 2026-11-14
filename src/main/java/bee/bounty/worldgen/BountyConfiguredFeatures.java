@@ -2,7 +2,10 @@ package bee.bounty.worldgen;
 
 import bee.bounty.BountifulBounty;
 import bee.bounty.registry.BountyBlocks;
+import bee.bounty.worldgen.placer.BountyFlowerStateProvider;
+import bee.bounty.worldgen.placer.FruitLeavesProvider;
 import bee.bounty.worldgen.placer.PearFoliagePlacer;
+import bee.bounty.worldgen.placer.WeightedBountyFlowerStateProvider;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
@@ -116,7 +119,7 @@ public class BountyConfiguredFeatures {
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(final Block log, final Block leaves, final int baseHeight, final int heightRandA, final int heightRandB, final int blobRadius) {
         return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(log)
                 , new StraightTrunkPlacer(baseHeight, heightRandA, heightRandB)
-                , BlockStateProvider.simple(leaves), new BlobFoliagePlacer(ConstantInt.of(blobRadius)
+                , new FruitLeavesProvider(leaves), new BlobFoliagePlacer(ConstantInt.of(blobRadius)
                 , ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1));
     }
 
@@ -125,14 +128,14 @@ public class BountyConfiguredFeatures {
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createFancyFruit(Block leaves) {
-        return (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BountyBlocks.FRUIT_LOG), new FancyTrunkPlacer(3, 8, 0), BlockStateProvider.simple(leaves), new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(3)))).ignoreVines();
+        return (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(BountyBlocks.FRUIT_LOG), new FancyTrunkPlacer(3, 8, 0), new FruitLeavesProvider(leaves), new FancyFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), 4), new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(3)))).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createPearTree(Block leaves) {
         return new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(BountyBlocks.FRUIT_LOG),
                 new StraightTrunkPlacer(4, 2, 0),
-                BlockStateProvider.simple(leaves),
+                new FruitLeavesProvider(leaves),
                 new PearFoliagePlacer(new WeightedListInt(WeightedList.<IntProvider>builder().add(ConstantInt.of(2), 3).add(ConstantInt.of(2), 1).build())
                         , ConstantInt.of(1)
                         , 5),

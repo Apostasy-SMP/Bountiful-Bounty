@@ -33,13 +33,14 @@ public class BountifulBounty implements ModInitializer {
 
     @Override
     public void onInitialize() {
-
-        BountyBlocks.init();
         BountyItems.init();
+        BountyBlocks.init();
         BountyTags.init();
         BountyBlockStateProviderTypes.init();
         BountyBlockStateOverrides.init();
         BountyFoliagePlacerTypes.init();
+        BountyDataComponents.init();
+        BountyDataComponentPredicates.init();
 
         BlockEntityType.SHELF.addSupportedBlock(BountyBlocks.FRUIT_SHELF);
 		BlockEntityType.SIGN.addSupportedBlock(BountyBlocks.FRUIT_SIGN);

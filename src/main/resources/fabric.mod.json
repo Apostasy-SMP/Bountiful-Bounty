@@ -26,6 +26,7 @@
 		"bee.bounty.BountifulBountyClient"
 	]
 	},
+	"accessWidener": "bounty.classtweaker",
 	"mixins": [
 		"bounty.mixins.json"
 	],

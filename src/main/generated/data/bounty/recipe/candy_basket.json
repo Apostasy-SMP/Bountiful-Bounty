@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    "minecraft:pumpkin",
+    "minecraft:paper",
+    "minecraft:bowl"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bounty:candy_basket"
+  }
+}

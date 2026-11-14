@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/flowerbed_4",
+  "textures": {
+    "flowerbed": "bounty:block/midnight_wildflowers",
+    "stem": "bounty:block/midnight_wildflowers_stem"
+  }
+}

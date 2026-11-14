@@ -41,7 +41,25 @@ public class BountyTagGen extends FabricTagProvider.BlockTagProvider {
                 .add(key("dusk_cornflower"))
                 .add(key("dusk_bluet"))
                 .add(key("dusk_lily"))
-                .add(key("dusk_dandelion"));
+                .add(key("dusk_dandelion"))
+                .add(key("halo_flower"))
+                .add(key("angel_blossom"))
+                .add(key("farlow_lily"))
+                .add(key("white_carnation"))
+                .add(key("red_carnation"))
+                .add(key("blue_carnation"))
+                .add(key("yellow_carnation"))
+                .add(key("foxglove"))
+                .add(key("glacial_foxglove"))
+                .add(key("flame_lily"))
+                .add(key("void_lily"))
+                .add(key("zap_lily"))
+                .add(key("frost_lily"))
+                .add(key("scarlet_wildflowers"))
+                .add(key("midnight_wildflowers"))
+                .add(key("frosty_wildflowers"))
+                .add(key("enchanted_wildflowers"))
+                .add(key("dusk_wildflowers"));
 
         builder(BlockTags.FLOWERS)
                 .add(key("tall_cyan_rose"))
@@ -60,6 +78,25 @@ public class BountyTagGen extends FabricTagProvider.BlockTagProvider {
                 .add(BountyBlocks.FRUIT_WOOD)
                 .add(BountyBlocks.STRIPPED_FRUIT_LOG)
                 .add(BountyBlocks.STRIPPED_FRUIT_WOOD);
+
+        valueLookupBuilder(BlockTags.MINEABLE_WITH_HOE)
+                .add(BountyBlocks.APPLE_LEAVES)
+                .add(BountyBlocks.GREEN_APPLE_LEAVES)
+                .add(BountyBlocks.LIME_LEAVES)
+                .add(BountyBlocks.LEMON_LEAVES)
+                .add(BountyBlocks.WHITE_CHERRY_LEAVES)
+                .add(BountyBlocks.PEAR_LEAVES)
+                .add(BountyBlocks.ORANGE_LEAVES);
+
+        valueLookupBuilder(BlockTags.LEAVES)
+                .add(BountyBlocks.APPLE_LEAVES)
+                .add(BountyBlocks.GREEN_APPLE_LEAVES)
+                .add(BountyBlocks.LIME_LEAVES)
+                .add(BountyBlocks.LEMON_LEAVES)
+                .add(BountyBlocks.WHITE_CHERRY_LEAVES)
+                .add(BountyBlocks.PEAR_LEAVES)
+                .add(BountyBlocks.ORANGE_LEAVES);
+
 
 
     }

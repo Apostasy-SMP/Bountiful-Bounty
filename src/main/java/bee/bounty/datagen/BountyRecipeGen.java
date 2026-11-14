@@ -2,6 +2,7 @@ package bee.bounty.datagen;
 
 import bee.bounty.registry.BountyBlocks;
 import bee.bounty.registry.BountyItems;
+import bee.bounty.registry.BountyTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.core.HolderLookup;
@@ -58,6 +59,26 @@ public class BountyRecipeGen extends FabricRecipeProvider {
                 addFlowerDye(BountyBlocks.DUSK_LILY, Items.GRAY_DYE);
                 addFlowerDye(BountyBlocks.DUSK_DANDELION, Items.BLUE_DYE);
 
+                addFlowerDye(BountyBlocks.HALO_FLOWER, Items.YELLOW_DYE);
+                addFlowerDye(BountyBlocks.ANGEL_BLOSSOM, Items.WHITE_DYE);
+                addFlowerDye(BountyBlocks.FARLOW_LILY, Items.PINK_DYE);
+                addFlowerDye(BountyBlocks.WHITE_CARNATION, Items.WHITE_DYE);
+                addFlowerDye(BountyBlocks.RED_CARNATION, Items.RED_DYE);
+                addFlowerDye(BountyBlocks.BLUE_CARNATION, Items.BLUE_DYE);
+                addFlowerDye(BountyBlocks.YELLOW_CARNATION, Items.YELLOW_DYE);
+                addFlowerDye(BountyBlocks.FOXGLOVE, Items.MAGENTA_DYE);
+                addFlowerDye(BountyBlocks.GLACIAL_FOXGLOVE, Items.LIGHT_BLUE_DYE);
+                addFlowerDye(BountyBlocks.FLAME_LILY, Items.ORANGE_DYE);
+                addFlowerDye(BountyBlocks.VOID_LILY, Items.PURPLE_DYE);
+                addFlowerDye(BountyBlocks.FROST_LILY, Items.CYAN_DYE);
+                addFlowerDye(BountyBlocks.ZAP_LILY, Items.YELLOW_DYE);
+
+                addFlowerDye(BountyBlocks.SCARLET_WILDFLOWERS, Items.RED_DYE);
+                addFlowerDye(BountyBlocks.MIDNIGHT_WILDFLOWERS, Items.MAGENTA_DYE);
+                addFlowerDye(BountyBlocks.FROSTY_WILDFLOWERS, Items.LIGHT_GRAY_DYE);
+                addFlowerDye(BountyBlocks.ENCHANTED_WILDFLOWERS, Items.BLUE_DYE);
+                addFlowerDye(BountyBlocks.DUSK_WILDFLOWERS, Items.BLACK_DYE);
+
 
                 this.generateRecipes(BountyBlocks.FRUIT_BLOCK_FAMILY, FeatureFlags.VANILLA_SET);
 
@@ -70,6 +91,7 @@ public class BountyRecipeGen extends FabricRecipeProvider {
                 addCandyRecipe(BountyItems.ORANGE_CANDY, BountyItems.ORANGE);
                 addCandyRecipe(BountyItems.CHERRY_CANDY, BountyItems.CHERRY);
                 addCandyRecipe(BountyItems.PEAR_CANDY, BountyItems.PEAR);
+                addCandyRecipe(BountyItems.BLUE_BERRY_CANDY, BountyItems.PEAR);
 
                 addPieRecipe(BountyItems.GLOW_BERRY_PIE, Items.GLOW_BERRIES);
                 addPieRecipe(BountyItems.SWEET_BERRY_PIE, Items.SWEET_BERRIES);
@@ -77,6 +99,7 @@ public class BountyRecipeGen extends FabricRecipeProvider {
                 addPieRecipe(BountyItems.LIME_PIE, BountyItems.LIME);
                 addPieRecipe(BountyItems.LEMON_PIE, BountyItems.LEMON);
                 addPieRecipe(BountyItems.CHERRY_PIE, BountyItems.CHERRY);
+                addPieRecipe(BountyItems.BLUE_BERRY_PIE, BountyItems.CHERRY);
 
                 shapeless(RecipeCategory.FOOD, BountyItems.CHOCOLATE_BAR, 3)
                         .requires(Items.COCOA_BEANS, 2)
@@ -100,11 +123,40 @@ public class BountyRecipeGen extends FabricRecipeProvider {
                         .unlockedBy(getHasName(BountyItems.LEMON), has(BountyItems.LEMON))
                         .save(output);
 
+
+                shapeless(RecipeCategory.FOOD, BountyItems.BLUE_BERRY_COOKIE, 8)
+                        .requires(Items.WHEAT, 2)
+                        .requires(Items.SUGAR)
+                        .requires(BountyItems.BLUE_BERRIES)
+                        .unlockedBy(getHasName(BountyItems.BLUE_BERRIES), has(BountyItems.BLUE_BERRIES))
+                        .save(output);
+
                 shapeless(RecipeCategory.FOOD, BountyItems.CHERRY_CHOCOLATE_COOKIE, 8)
                         .requires(Items.WHEAT, 1)
                         .requires(BountyItems.CHOCOLATE_BAR)
                         .requires(BountyItems.CHERRY)
                         .unlockedBy(getHasName(BountyItems.CHERRY), has(BountyItems.CHERRY))
+                        .save(output);
+
+                shaped(RecipeCategory.TOOLS, BountyItems.LOLLIPOP)
+                        .pattern(" s ")
+                        .pattern(" fs")
+                        .pattern("t  ")
+                        .define('s', Items.SUGAR)
+                        .define('f', BountyTags.FRUIT)
+                        .define('t', Items.STICK)
+                        .unlockedBy("has_fruit", has(BountyTags.FRUIT))
+                        .save(output);
+
+                planksFromLog(BountyBlocks.FRUIT_PLANKS, BountyTags.FRUIT_LOGS, 4);
+
+                shelf(BountyBlocks.FRUIT_SHELF, BountyBlocks.STRIPPED_FRUIT_LOG);
+
+                shapeless(RecipeCategory.TOOLS, BountyItems.CANDY_BASKET)
+                        .requires(Items.PUMPKIN)
+                        .requires(Items.PAPER)
+                        .requires(Items.BOWL)
+                        .unlockedBy(getHasName(Items.PUMPKIN), has(Items.PUMPKIN))
                         .save(output);
             }
 
