@@ -13,6 +13,7 @@ New flower variants have been added, alongside dusk variants (opposite colours) 
 
 <details>
 <summary>New Flowers</summary>
+  
 - Red Rose
 - Cyan Rose
 - Pink Rose
@@ -47,6 +48,7 @@ New flower variants have been added, alongside dusk variants (opposite colours) 
 
 <details>
 <summary>Dusk Flowers</summary>
+  
 - Dusk Perennial
 - Dusk Zinnia
 - Dusk Orchid
@@ -68,6 +70,7 @@ New fruits have been added! Harvested from the leaves of a fruit tree by right c
 
 <details>
 <summary>Fruits and Spawning Location</summary>
+  
 - Apple, found in forest/plains biomes
 - Green Apple, rarely replaces apple trees
 - Lime, found in jungles
