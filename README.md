@@ -26,6 +26,23 @@ New flower variants have been added, alongside dusk variants (opposite colours) 
 - Perennial
 - Pinwheel Daisy
 - Relic Flower
+- Halo Flower
+- Angel Blossom
+- Farlow Lily
+- White Carnation
+- Red Carnation
+- Blue Carnation
+- Yellow Carnation
+- Foxglove
+- Glacial Foxglove
+- Flame Lily
+- Void Lily
+- Zap Lily
+- Frost Lily
+- Scarlet Wildflowers
+- Midnight Wildflowers
+- Enchanted Wildflowers
+- Frosty Wildflowers
 </details>
 
 <details>
@@ -43,6 +60,7 @@ New flower variants have been added, alongside dusk variants (opposite colours) 
 - Dusk Potentilla
 - Dusk Tulip
 - Dusk Sunflower
+- Dusk Wildflowers
 </details>
 
 ### Fruits!
@@ -61,3 +79,12 @@ New fruits have been added! Harvested from the leaves of a fruit tree by right c
 
 ### Candy :3 
 All fruit types have a candy, these can be put inside of a candy basket. This candy basket does not cause any lag or inventory cluttering :3
+
+### Future updates
+
+- Farm Update
+- Winter Update
+- Party Update
+
+Have a cool feature idea or want this mod updated? 
+[Join the Discord!](https://discord.gg/YCm5DBF8dx)
