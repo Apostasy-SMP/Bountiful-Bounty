@@ -52,19 +52,21 @@ public record CandyBasketContents(ArrayList<ItemStack> contents) {
         return getSize() >= 128 ? 3 : getSize() >= 64 ? 2 : 1;
     }
 
-    public List<ItemStack> getRandomItems(int amount) {
-        ArrayList<ItemStack> stacks = new ArrayList<>();
-        int count = 0;
-        for (ItemStack stack : contents) {
-            if (contents.isEmpty() || amount > count) return stacks;
-            RandomSource random = RandomSource.create();
-            int amountTaken = random.nextInt(stack.getCount() / 2, stack.getCount());
-            stack.shrink(amountTaken);
-            stacks.add(stack.copyWithCount(amountTaken));
-            count += amountTaken;
+    public List<ItemStack> getItemsToThrow(int amount) {
+        ArrayList<ItemStack> throwables = new ArrayList<>();
+        int amountAdded = 0;
+
+        while (amountAdded < amount && !this.contents.isEmpty()) {
+            int random = RandomSource.create().nextInt(this.contents.size());
+            ItemStack stack = this.contents.get(random);
+            if (stack.isEmpty()) continue;
+            amountAdded += stack.getCount();
+            throwables.add(stack.copy());
+            this.contents.remove(random);
         }
-        return stacks;
+        return throwables;
     }
+
 
     public void removeItem(int pos) {
         contents.remove(pos);
